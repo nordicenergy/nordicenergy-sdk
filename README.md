@@ -9,32 +9,30 @@ Please read the [documentation](https://sdk.doc.nordicenergy.io/) for full API d
 
 The SDK includes following packages with package-level documentation and examples inside each package.
 
-1. [@nordicenergy-js/core](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-core)
-2. [@nordicenergy-js/account](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-account)
-3. [@nordicenergy-js/crypto](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-crypto)
-4. [@nordicenergy-js/network](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-network)
-5. [@nordicenergy-js/utils](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-utils)
-6. [@nordicenergy-js/transaction](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-transaction)
-7. [@nordicenergy-js/contract](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-contract)
-8. [@nordicenergy-js/staking](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-contract)
+1. [@nordicenergy-js/core](https://github.com/nordicenergy/nordicenergy-sdk/tree/master/packages/nordicenergy-core)
+2. [@nordicenergy-js/account](https://github.com/nordicenergy/nordicenergy-sdk/tree/master/packages/nordicenergy-account)
+3. [@nordicenergy-js/crypto](https://github.com/nordicenergy/nordicenergy-sdk/tree/master/packages/nordicenergy-crypto)
+4. [@nordicenergy-js/network](https://github.com/nordicenergy/nordicenergy-sdk/tree/master/packages/nordicenergy-network)
+5. [@nordicenergy-js/utils](https://github.com/nordicenergy/nordicenergy-sdk/tree/master/packages/nordicenergy-utils)
+6. [@nordicenergy-js/transaction](https://github.com/nordicenergy/nordicenergy-sdk/tree/master/packages/nordicenergy-transaction)
+7. [@nordicenergy-js/contract](https://github.com/nordicenergy/nordicenergy-sdk/tree/master/packages/nordicenergy-contract)
+8. [@nordicenergy-js/staking](https://github.com/nordicenergy/nordicenergy-sdk/tree/master/packages/nordicenergy-contract)
 
 # Examples
 
 * [A Token Faucet Demo DApp](https://github.com/nordicenergy/token-faucet-demo-dapp)
-* [Hackathon DApps](https://docs.nordicenergy.io/home/showcases/applications): DApps built during our internal hackathon
-  * [soccerplayers](https://github.com/gupadhyaya/soccerplayers), [netmoji](https://github.com/peekpi/netmoji), [harmonauts](https://github.com/ivorytowerdds/harmonauts), [good-net](https://github.com/nordicenergy/dapp-demo-crowdfunding)
 * [Cross-chain Apps](https://docs.nordicenergy.io/home/showcases/crosschain) [the link contains code, demo, and more information]
 * [DeFi Apps](https://docs.nordicenergy.io/home/showcases/defi)
 * [DevPost Hackathon Apps](https://docs.nordicenergy.io/home/showcases/hackathons)
-* Eth<>Nordic Energy Bridge Compnetnts: [frontend](https://github.com/nordicenergy/ethnet-bridge.frontend), [backend](https://github.com/nordicenergy/ethnet-bridge.appengine), [smart contracts](https://github.com/nordicenergy/ethnet-bridge), [test scripts](https://github.com/nordicenergy/ethnet-bridge.tests)
+* Eth<>Nordic Energy Bridge Components: [frontend](https://github.com/nordicenergy/ethnet-bridge.frontend), [backend](https://github.com/nordicenergy/ethnet-bridge.appengine), [smart contracts](https://github.com/nordicenergy/ethnet-bridge), [test scripts](https://github.com/nordicenergy/ethnet-bridge.tests)
 * Eth<>nordicenergy bridge SDKs: [main sdk](https://github.com/nordicenergy/ethnet-bridge.sdk), [bridge UI widget](https://github.com/nordicenergy/ethnet-bridge.ui-sdk)
-* Swoop Dex: [interface](https://github.com/nordicenergy/swoop-interface), [cli](https://github.com/nordicenergy/swoop-cli), [sdk](https://github.com/nordicenergy/swoop-sdk), [deployment](https://github.com/nordicenergy/swoop-deployment), [misc](https://github.com/nordicenergy/swoop-misc), [lib](https://github.com/nordicenergy/swoop-lib), [periphery](https://github.com/nordicenergy/swoop-periphery), [core](https://github.com/nordicenergy/swoop-core), [testing](https://github.com/nordicenergy/swoop-testing), [utils](https://github.com/nordicenergy/swoop-utils)
-* [Iris Bridge](https://github.com/nordicenergy/ethnet-bridge-v2): inspired from near's rainbow bridge
-* [Animoca's BeastQuest Game](https://github.com/nordicenergy/BeastQuest)
+
+# Under construction
+
+* BitFinance Dex: [interface](https://github.com/nordicenergy/bitfinance-interface), [cli](https://github.com/nordicenergy/bitfinance-cli), [sdk](https://github.com/nordicenergy/bitfinance-sdk), [deployment](https://github.com/nordicenergy/bitfinance-deployment), [misc](https://github.com/nordicenergy/swoop-misc), [lib](https://github.com/nordicenergy/bitfinance-lib), [periphery](https://github.com/nordicenergy/bitfinance-periphery), [core](https://github.com/nordicenergy/bitfinance-core), [testing](https://github.com/nordicenergy/bitfinance-testing), [utils](https://github.com/nordicenergy/bitfinance-utils)
+* [Bridge](https://github.com/nordicenergy/ethnet-bridge-v2): inspired from near's rainbow bridge
 * [Chainlink Testnet Integration Demo](https://github.com/nordicenergy/chainlink-demo-project)
 * [NFT Store DApp](https://github.com/nordicenergy/nft-store)
-* [old dapp-examples](https://github.com/nordicenergy/dapp-examples): some of them may be outdated!
-
 
 # Installation
 
