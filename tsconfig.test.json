@@ -3,13 +3,13 @@
   "files": [],
   "include": ["./typings/**/*.d.ts"],
   "references": [
-    { "path": "packages/harmony-utils" },
-    { "path": "packages/harmony-crypto" },
-    { "path": "packages/harmony-network" },
-    { "path": "packages/harmony-transaction" },
-    { "path": "packages/harmony-staking" },
-    { "path": "packages/harmony-account" },
-    { "path": "packages/harmony-contract" },
-    { "path": "packages/harmony-core" }
+    { "path": "packages/nordicenergy-utils" },
+    { "path": "packages/nordicenergy-crypto" },
+    { "path": "packages/nordicenergy-network" },
+    { "path": "packages/nordicenergy-transaction" },
+    { "path": "packages/nordicenergy-staking" },
+    { "path": "packages/nordicenergy-account" },
+    { "path": "packages/nordicenergy-contract" },
+    { "path": "packages/nordicenergy-core" }
   ]
 }

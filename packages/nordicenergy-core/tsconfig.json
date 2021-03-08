@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src", "../../typings/**/*.d.ts", "../nordicenergy-utils/src/core.ts"],
+  "references": [
+    {"path": "../nordicenergy-account"},
+    {"path": "../nordicenergy-crypto"},
+    {"path": "../nordicenergy-utils"},
+    {"path": "../nordicenergy-network"},
+    {"path": "../nordicenergy-transaction"},
+    {"path": "../nordicenergy-contract"}
+  ]
+}

@@ -9,11 +9,11 @@
   },
   "include": ["src", "../typings/**/*.d.ts", "fixtures"],
   "references": [
-    { "path": "../packages/harmony-account" },
-    { "path": "../packages/harmony-crypto" },
-    { "path": "../packages/harmony-utils" },
-    { "path": "../packages/harmony-network" },
-    { "path": "../packages/harmony-transaction" },
-    { "path": "../packages/harmony-contract" }
+    { "path": "../packages/nordicenergy-account" },
+    { "path": "../packages/nordicenergy-crypto" },
+    { "path": "../packages/nordicenergy-utils" },
+    { "path": "../packages/nordicenergy-network" },
+    { "path": "../packages/nordicenergy-transaction" },
+    { "path": "../packages/nordicenergy-contract" }
   ]
 }

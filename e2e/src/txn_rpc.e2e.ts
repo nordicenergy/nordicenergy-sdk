@@ -1,7 +1,7 @@
-import { harmony } from './harmony';
+import { nordicenergy } from './nordicenergy';
 import txnJsons from '../fixtures/transactions.json';
 
-const messenger = harmony.messenger;
+const messenger = nordicenergy.messenger;
 
 interface TransactionInfo {
   blockHash: string;
@@ -13,18 +13,18 @@ describe('e2e test transactions by RPC Method', () => {
   const txnHashesFixtures: any = [];
   const transactionInfoList: any = [];
   // net_*
-  it('should test hmy_sendRawTransaction', async () => {
+  it('should test net_sendRawTransaction', async () => {
     const { transactions } = txnJsons;
 
     for (const txn of transactions) {
-      const sent = await messenger.send('hmy_sendRawTransaction', txn.rawTransaction);
-      expect(harmony.utils.isHash(sent.result)).toEqual(true);
+      const sent = await messenger.send('net_sendRawTransaction', txn.rawTransaction);
+      expect(nordicenergy.utils.isHash(sent.result)).toEqual(true);
       txnHashesFixtures.push(sent.result);
     }
   });
-  it('should test hmy_getTransactionByHash', async () => {
+  it('should test net_getTransactionByHash', async () => {
     for (const txnHash of txnHashesFixtures) {
-      const txnDetail = await harmony.blockchain.getTransactionByHash({
+      const txnDetail = await nordicenergy.blockchain.getTransactionByHash({
         txnHash,
       });
       if (txnDetail.result !== null) {
@@ -40,10 +40,10 @@ describe('e2e test transactions by RPC Method', () => {
       }
     }
   });
-  it('should test hmy_getTransactionByBlockHashAndIndex', async () => {
+  it('should test net_getTransactionByBlockHashAndIndex', async () => {
     for (const some of transactionInfoList) {
       const transactionInfo: TransactionInfo = some;
-      const txnDetail: any = await harmony.blockchain.getTransactionByBlockHashAndIndex({
+      const txnDetail: any = await nordicenergy.blockchain.getTransactionByBlockHashAndIndex({
         blockHash: transactionInfo.blockHash,
         index: transactionInfo.index,
       });
@@ -54,10 +54,10 @@ describe('e2e test transactions by RPC Method', () => {
       }
     }
   });
-  it('should test hmy_getTransactionByBlockNumberAndIndex', async () => {
+  it('should test net_getTransactionByBlockNumberAndIndex', async () => {
     for (const some of transactionInfoList) {
       const transactionInfo: TransactionInfo = some;
-      const txnDetail: any = await harmony.blockchain.getTransactionByBlockNumberAndIndex({
+      const txnDetail: any = await nordicenergy.blockchain.getTransactionByBlockNumberAndIndex({
         blockNumber: transactionInfo.blockNumber,
         index: transactionInfo.index,
       });
@@ -68,39 +68,39 @@ describe('e2e test transactions by RPC Method', () => {
       }
     }
   });
-  it('should test hmy_getTransactionCountByHash', async () => {
+  it('should test net_getTransactionCountByHash', async () => {
     for (const some of transactionInfoList) {
       const transactionInfo: TransactionInfo = some;
-      const txnCount: any = await harmony.blockchain.getBlockTransactionCountByHash({
+      const txnCount: any = await nordicenergy.blockchain.getBlockTransactionCountByHash({
         blockHash: transactionInfo.blockHash,
       });
-      expect(harmony.utils.isHex(txnCount.result)).toEqual(true);
+      expect(nordicenergy.utils.isHex(txnCount.result)).toEqual(true);
     }
   });
-  it('should test hmy_getTransactionCountByNumber', async () => {
+  it('should test net_getTransactionCountByNumber', async () => {
     for (const some of transactionInfoList) {
       const transactionInfo: TransactionInfo = some;
-      const txnCount: any = await harmony.blockchain.getBlockTransactionCountByNumber({
+      const txnCount: any = await nordicenergy.blockchain.getBlockTransactionCountByNumber({
         blockNumber: transactionInfo.blockNumber,
       });
-      expect(harmony.utils.isHex(txnCount.result)).toEqual(true);
+      expect(nordicenergy.utils.isHex(txnCount.result)).toEqual(true);
     }
   });
-  it('should test hmy_getTransactionReceipt', async () => {
+  it('should test net_getTransactionReceipt', async () => {
     const { transactions } = txnJsons;
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < txnHashesFixtures.length; i += 1) {
       const txnHash = txnHashesFixtures[i];
-      const receipt: any = await harmony.blockchain.getTransactionReceipt({
+      const receipt: any = await nordicenergy.blockchain.getTransactionReceipt({
         txnHash,
       });
 
       if (receipt.result !== null) {
         expect(checkTransactionReceipt(receipt.result)).toEqual(true);
-        expect(harmony.crypto.getAddress(receipt.result.from).checksum).toEqual(
+        expect(nordicenergy.crypto.getAddress(receipt.result.from).checksum).toEqual(
           transactions[i].senderAddress,
         );
-        expect(harmony.crypto.getAddress(receipt.result.to).checksum).toEqual(
+        expect(nordicenergy.crypto.getAddress(receipt.result.to).checksum).toEqual(
           transactions[i].receiverAddress,
         );
         expect(receipt.result.blockHash).toEqual(transactionInfoList[i].blockHash);
@@ -114,7 +114,7 @@ describe('e2e test transactions by RPC Method', () => {
 
     for (let i = 0; i < transactionInfoList; i += 1) {
       const transactionInfo: TransactionInfo = transactionInfoList[i];
-      const nonce: any = await harmony.blockchain.getTransactionCount({
+      const nonce: any = await nordicenergy.blockchain.getTransactionCount({
         address: transactions[i].senderAddressBech32,
         blockNumber: transactionInfo.blockNumber,
       });
@@ -124,52 +124,52 @@ describe('e2e test transactions by RPC Method', () => {
 });
 
 function checkTransactionDetail(data: any) {
-  return harmony.utils.validateArgs(
+  return nordicenergy.utils.validateArgs(
     data,
     {
-      blockHash: [harmony.utils.isHash],
-      blockNumber: [harmony.utils.isHex],
+      blockHash: [nordicenergy.utils.isHash],
+      blockNumber: [nordicenergy.utils.isHex],
       // tslint:disable-next-line: no-shadowed-variable
-      from: [harmony.utils.isValidAddress],
-      gas: [harmony.utils.isHex],
-      gasPrice: [harmony.utils.isHex],
-      hash: [harmony.utils.isHash],
+      from: [nordicenergy.utils.isValidAddress],
+      gas: [nordicenergy.utils.isHex],
+      gasPrice: [nordicenergy.utils.isHex],
+      hash: [nordicenergy.utils.isHash],
       // tslint:disable-next-line: no-shadowed-variable
-      input: [(data: any) => data === '0x' || harmony.utils.isHex(data)],
-      nonce: [harmony.utils.isHex],
+      input: [(data: any) => data === '0x' || nordicenergy.utils.isHex(data)],
+      nonce: [nordicenergy.utils.isHex],
       // tslint:disable-next-line: no-shadowed-variable
-      to: [(data: any) => data === '0x' || harmony.utils.isValidAddress(data)],
-      transactionIndex: [harmony.utils.isHex],
-      value: [harmony.utils.isHex],
-      v: [harmony.utils.isHex],
-      r: [harmony.utils.isHex],
-      s: [harmony.utils.isHex],
+      to: [(data: any) => data === '0x' || nordicenergy.utils.isValidAddress(data)],
+      transactionIndex: [nordicenergy.utils.isHex],
+      value: [nordicenergy.utils.isHex],
+      v: [nordicenergy.utils.isHex],
+      r: [nordicenergy.utils.isHex],
+      s: [nordicenergy.utils.isHex],
     },
     {},
   );
 }
 
 function checkTransactionReceipt(data: any) {
-  return harmony.utils.validateArgs(
+  return nordicenergy.utils.validateArgs(
     data,
     {
-      blockNumber: [harmony.utils.isHex],
+      blockNumber: [nordicenergy.utils.isHex],
       contractAddress: [
         // tslint:disable-next-line: no-shadowed-variable
-        (data: any) => data === null || harmony.utils.isValidAddress,
+        (data: any) => data === null || nordicenergy.utils.isValidAddress,
       ],
-      cumulativeGasUsed: [harmony.utils.isHex],
-      from: [harmony.utils.isValidAddress],
-      gasUsed: [harmony.utils.isHex],
-      logs: [harmony.utils.isArray],
-      logsBloom: [harmony.utils.isHex],
+      cumulativeGasUsed: [nordicenergy.utils.isHex],
+      from: [nordicenergy.utils.isValidAddress],
+      gasUsed: [nordicenergy.utils.isHex],
+      logs: [nordicenergy.utils.isArray],
+      logsBloom: [nordicenergy.utils.isHex],
 
-      shardID: [harmony.utils.isNumber],
+      shardID: [nordicenergy.utils.isNumber],
       // tslint:disable-next-line: no-shadowed-variable
-      to: [(data: any) => data === '0x' || harmony.utils.isValidAddress],
-      transactionHash: [harmony.utils.isHash],
-      transactionIndex: [harmony.utils.isHex],
+      to: [(data: any) => data === '0x' || nordicenergy.utils.isValidAddress],
+      transactionHash: [nordicenergy.utils.isHash],
+      transactionIndex: [nordicenergy.utils.isHex],
     },
-    { blockHash: [harmony.utils.isHash], root: [harmony.utils.isHash] },
+    { blockHash: [nordicenergy.utils.isHash], root: [nordicenergy.utils.isHash] },
   );
 }
