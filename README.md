@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/nordicenergy/nordicenergy-sdk)
+
 # Nordic Energy JavaScript SDK
 
 [![npm version](https://img.shields.io/npm/v/@nordicenergy-js/core.svg?style=flat-square)](https://www.npmjs.com/package/@nordicenergy-js/core)
