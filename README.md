@@ -99,8 +99,3 @@ yarn test:src
 
 ```bash
 yarn build && yarn test:e2e
-```
-
-
-
-
