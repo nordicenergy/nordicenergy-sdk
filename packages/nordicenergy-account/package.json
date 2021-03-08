@@ -1,7 +1,7 @@
 {
     "name": "@nordicenergy-js/account",
     "version": "0.1.56",
-    "description": "account and wallet for nordicenergy",
+    "description": "account and wallet for Nordic Energy",
     "main": "dist/index.js",
     "node": "dist/index.js",
     "browser": "dist/index.js",
@@ -15,7 +15,7 @@
     "publishConfig": {
         "access": "public"
     },
-    "author": "neeboo@firestack.nordicenergy",
+    "author": "Nordic Energy",
     "license": "MIT",
     "dependencies": {
         "@nordicenergy-js/core": "0.1.56",

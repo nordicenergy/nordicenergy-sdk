@@ -1,7 +1,7 @@
 {
     "name": "@nordicenergy-js/network",
     "version": "0.1.56",
-    "description": "network suites for nordicenergy",
+    "description": "network suites for Nordic Energy",
     "main": "dist/index.js",
     "node": "dist/index.js",
     "browser": "dist/index.js",
@@ -15,7 +15,7 @@
     "publishConfig": {
         "access": "public"
     },
-    "author": "vamise@firestack.nordicenergy",
+    "author": "Nordic Energy",
     "license": "MIT",
     "dependencies": {
         "@nordicenergy-js/utils": "0.1.56",
@@ -24,4 +24,3 @@
         "websocket": "^1.0.28"
     },
     "gitHead": "56606e9365721729a490c27d6a294e0daf90fbdf"
-}

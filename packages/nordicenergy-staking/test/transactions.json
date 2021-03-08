@@ -1,11 +1,11 @@
 [{
         "privateKey": "4edef2c24995d15b0e25cbd152fb0e2c05d3b79b9c2afd134e6f59f91bf99e48",
         "chainID": "0x2",
-        "validatorAddress": "one1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
+        "validatorAddress": "net1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
         "description": {
             "name": "Alice",
             "identity": "alice",
-            "website": "alice.nordicenergy",
+            "website": "alice.nordicenergy.io",
             "securityContact": "Bob",
             "details": "Don't mess with me!!!"
         },
@@ -31,11 +31,11 @@
     {
         "privateKey": "4edef2c24995d15b0e25cbd152fb0e2c05d3b79b9c2afd134e6f59f91bf99e48",
         "chainID": "0x2",
-        "validatorAddress": "one1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
+        "validatorAddress": "net1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
         "description": {
             "name": "Alice",
             "identity": "alice",
-            "website": "alice.nordicenergy",
+            "website": "alice.nordicenergy.io",
             "securityContact": "Bob",
             "details": "Don't mess with me!!!"
         },
@@ -55,8 +55,8 @@
     {
         "privateKey": "4edef2c24995d15b0e25cbd152fb0e2c05d3b79b9c2afd134e6f59f91bf99e48",
         "chainID": "0x2",
-        "delegatorAddress": "one1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
-        "validatorAddress": "one1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
+        "delegatorAddress": "net1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
+        "validatorAddress": "net1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
         "amount": "0xa",
         "nonce": "0x2",
         "gasPrice": "0x",
@@ -69,8 +69,8 @@
     {
         "privateKey": "4edef2c24995d15b0e25cbd152fb0e2c05d3b79b9c2afd134e6f59f91bf99e48",
         "chainID": "0x2",
-        "delegatorAddress": "one1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
-        "validatorAddress": "one1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
+        "delegatorAddress": "net1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
+        "validatorAddress": "net1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
         "amount": "0xa",
         "nonce": "0x2",
         "gasPrice": "0x",
@@ -83,7 +83,7 @@
     {
         "privateKey": "4edef2c24995d15b0e25cbd152fb0e2c05d3b79b9c2afd134e6f59f91bf99e48",
         "chainID": "0x2",
-        "delegatorAddress": "one1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
+        "delegatorAddress": "net1a0x3d6xpmr6f8wsyaxd9v36pytvp48zckswvv9",
         "nonce": "0x2",
         "gasPrice": "0x",
         "gasLimit": "0x64",

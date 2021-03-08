@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@nordicenergy-js/core.svg?style=flat-square)](https://www.npmjs.com/package/@nordicenergy-js/core)
 [![Build Status](https://travis-ci.com/FireStack-Lab/nordicenergy-sdk-core.svg?branch=master)](https://travis-ci.com/FireStack-Lab/nordicenergy-sdk-core)
 
-This is the Nordic Energy Javascript SDK which provides an easier way to interact with PowerChain blockchain.
+This is the Nordic Energy Javascript SDK which provides an easier way to interact with Nordic Energy blockchain.
 
 Please read the [documentation](https://sdk.doc.nordicenergy.io/) for full API doc.
 
@@ -21,11 +21,11 @@ The SDK includes following packages with package-level documentation and example
 # Examples
 
 * [A Token Faucet Demo DApp](https://github.com/nordicenergy/token-faucet-demo-dapp)
-* [Hackathon DApps](https://docs.nordicenergy.one/home/showcases/applications): DApps built during our internal hackathon
+* [Hackathon DApps](https://docs.nordicenergy.io/home/showcases/applications): DApps built during our internal hackathon
   * [soccerplayers](https://github.com/gupadhyaya/soccerplayers), [onemoji](https://github.com/peekpi/onemoji), [harmonauts](https://github.com/ivorytowerdds/harmonauts), [good-one](https://github.com/nordicenergy/dapp-demo-crowdfunding)
-* [Cross-chain Apps](https://docs.nordicenergy.one/home/showcases/crosschain) [the link contains code, demo, and more information]
-* [DeFi Apps](https://docs.nordicenergy.one/home/showcases/defi)
-* [DevPost Hackathon Apps](https://docs.nordicenergy.one/home/showcases/hackathons)
+* [Cross-chain Apps](https://docs.nordicenergy.io/home/showcases/crosschain) [the link contains code, demo, and more information]
+* [DeFi Apps](https://docs.nordicenergy.io/home/showcases/defi)
+* [DevPost Hackathon Apps](https://docs.nordicenergy.io/home/showcases/hackathons)
 * Eth<>Nordic Energy Bridge Components: [frontend](https://github.com/nordicenergy/ethnet-bridge.frontend), [backend](https://github.com/nordicenergy/ethnet-bridge.appengine), [smart contracts](https://github.com/nordicenergy/ethnet-bridge), [test scripts](https://github.com/nordicenergy/ethnet-bridge.tests)
 * Eth<>nordicenergy bridge SDKs: [main sdk](https://github.com/nordicenergy/ethnet-bridge.sdk), [bridge UI widget](https://github.com/nordicenergy/ethnet-bridge.ui-sdk)
 * Swoop Dex: [interface](https://github.com/nordicenergy/swoop-interface), [cli](https://github.com/nordicenergy/swoop-cli), [sdk](https://github.com/nordicenergy/swoop-sdk), [deployment](https://github.com/nordicenergy/swoop-deployment), [misc](https://github.com/nordicenergy/swoop-misc), [lib](https://github.com/nordicenergy/swoop-lib), [periphery](https://github.com/nordicenergy/swoop-periphery), [core](https://github.com/nordicenergy/swoop-core), [testing](https://github.com/nordicenergy/swoop-testing), [utils](https://github.com/nordicenergy/swoop-utils)
