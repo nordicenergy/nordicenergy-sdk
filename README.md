@@ -1,11 +1,11 @@
 # Nordic Energy JavaScript SDK
 
-[![npm version](https://img.shields.io/npm/v/@nordicenergy-js/core.svg?style=flat-square)](https://www.npmjs.com/package/@nordicenergy-js/core)
+[![npm version](https://img.shields.io/npm/v/@nordic-energy/nordicenergy-sdk/core.svg?style=flat-square)](https://www.npmjs.com/package/@@nordic-energy/nordicenergy-sdk/core)
 [![Build Status](https://travis-ci.com/FireStack-Lab/nordicenergy-sdk-core.svg?branch=master)](https://travis-ci.com/FireStack-Lab/nordicenergy-sdk-core)
 
 This is the Nordic Energy Javascript SDK which provides an easier way to interact with Nordic Energy blockchain.
 
-Please read the [documentation](https://sdk.doc.nordicenergy.io/) for full API doc.
+Please read the [documentation](https://sdk.nordicenergy.io/documents) for full API doc.
 
 The SDK includes following packages with package-level documentation and examples inside each package.
 
@@ -50,10 +50,10 @@ This library works on both nodejs and browser. Please use it according to your u
 ```bash
 
 # npm
-npm install @nordicenergy-js/core@next 
+npm install @@nordic-energy/nordicenergy-sdk/core@next 
 
 # yarn
-yarn add @nordicenergy-js/core@next
+yarn add @@nordic-energy/nordicenergy-sdk/core@next
 
 # tslib is required, we'd better install it as well
 npm install tslib
