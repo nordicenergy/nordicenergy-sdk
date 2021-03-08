@@ -5,7 +5,7 @@
  */
 
 // this file is ported from https://github.com/ethers-io/ethers.js/blob/master/src.ts/utils/rlp.ts
-// and done some fixes
+// and dnet some fixes
 import { arrayify, hexlify, Arrayish } from './bytes';
 
 function arrayifyInteger(value: number): number[] {

@@ -58,7 +58,7 @@ class Emitter {
       return this.emitter.off(type, handler);
     }
   }
-  onError(error: any) {
+  netrror(error: any) {
     this.emitter.on('error', error);
     this.removeEventListener('*');
   }

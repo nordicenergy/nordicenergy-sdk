@@ -1,12 +1,12 @@
 /**
- # @harmony-js/transaction
+ # @nordicenergy-js/transaction
 
 This package provides a collection of apis to create, sign/send transaction, and receive confirm/receipt.
 
 ## Installation
 
 ```
-npm install @harmony-js/transaction
+npm install @nordicenergy-js/transaction
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ npm install @harmony-js/transaction
 Create a NordicEnergy instance connecting to testnet
 
 ```javascript
-* const { NordicEnergy } = require('@harmony-js/core');
+* const { NordicEnergy } = require('@nordicenergy-js/core');
 * const {
 *   ChainID,
 *   ChainType,
@@ -23,9 +23,9 @@ Create a NordicEnergy instance connecting to testnet
 *   fromWei,
 *   Units,
 *   Unit,
-* } = require('@harmony-js/utils');
+* } = require('@nordicenergy-js/utils');
 
-* const hmy = new NordicEnergy(
+* const Ngy = new NordicEnergy(
 *     'https://api.s0.b.nordicenergy.io/',
 *     {
 *         chainType: ChainType.NordicEnergy,
@@ -38,7 +38,7 @@ Creating a new transaction using parameters
 ```javascript
 * const txn = net.transactions.newTx({
 *   to: 'net166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
-*   value: new Unit(1).asOne().toWei(),
+*   value: new Unit(1).asnet().toWei(),
 *   // gas limit, you can use string
 *   gasLimit: '21000',
 *   // send token from shardID
@@ -63,7 +63,7 @@ Getting the RLP encoding of a transaction (rawTransaction), along with raw trans
 
 Sign the transaction using a wallet and send the transaction, wait for confirmation and print receipt
 ```javascript
-* // key corresponds to one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
+* // key corresponds to net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
 * net.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
 
 * net.wallet.signTransaction(txn).then(signedTxn => {
@@ -149,10 +149,10 @@ Asynchronous transaction sign, send, and confirm
 ```
  *
  * @packageDocumentation
- * @module harmony-transaction
+ * @module nordicenergy-transaction
  */
 
-import { BN, Signature } from '@harmony-js/crypto';
+import { BN, Signature } from '@nordicenergy-js/crypto';
 
 export interface TxParams {
   id: string;
@@ -173,7 +173,7 @@ export interface TxParams {
 }
 
 export enum TxStatus {
-  NONE = 'NONE',
+  Nnet = 'Nnet',
   INTIALIZED = 'INITIALIZED',
   SIGNED = 'SIGNED',
   PENDING = 'PENDING',
@@ -190,7 +190,7 @@ export interface TransasctionReceipt {
   to: string;
   gasUsed: string;
   cumulativeGasUsed: string; // 13244
-  contractAddress?: string | null; // or null, if none was created
+  contractAddress?: string | null; // or null, if nnet was created
   logs: any[];
   logsBloom: string; // 256 byte bloom filter
   v: string;

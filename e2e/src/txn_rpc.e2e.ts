@@ -109,7 +109,7 @@ describe('e2e test transactions by RPC Method', () => {
       }
     }
   });
-  it('should test hmy_getTransactionCount', async () => {
+  it('should test Ngy_getTransactionCount', async () => {
     const { transactions } = txnJsons;
 
     for (let i = 0; i < transactionInfoList; i += 1) {

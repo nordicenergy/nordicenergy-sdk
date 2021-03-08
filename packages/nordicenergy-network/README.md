@@ -13,8 +13,8 @@ npm install @nordicenergy-js/network
 ```javascript
 const { Messenger, HttpProvider, WSProvider } = require('@nordicenergy-js/network');
 const { ChainID, ChainType } = require('@nordicenergy-js/utils');
-const testnetHTTP = 'https://api.s0.b.hmny.io';
-const testnetWS = 'wss://ws.s0.b.hmny.io';
+const testnetHTTP = 'https://api.s0.b.nordicenergy.io';
+const testnetWS = 'wss://ws.s0.b.nordicenergy.io';
 const localHTTP = 'http://localhost:9500/';
 const localWS = 'http://localhost:9800/';
 const http = new HttpProvider(testnetHTTP); // for local use localHTTP

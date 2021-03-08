@@ -1,12 +1,12 @@
 const packages = [
-  'harmony-utils',
-  'harmony-crypto',
-  'harmony-account',
-  'harmony-network',
-  'harmony-transaction',
-  'harmony-staking',
-  'harmony-contract',
-  'harmony-core',
+  'nordicenergy-utils',
+  'nordicenergy-crypto',
+  'nordicenergy-account',
+  'nordicenergy-network',
+  'nordicenergy-transaction',
+  'nordicenergy-staking',
+  'nordicenergy-contract',
+  'nordicenergy-core',
 ];
 
 export { packages };

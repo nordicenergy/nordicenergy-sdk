@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module harmony-contract
+ * @module nordicenergy-contract
  * @hidden
  */
 

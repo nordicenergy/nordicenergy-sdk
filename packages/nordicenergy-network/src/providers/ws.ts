@@ -50,12 +50,12 @@ class WSProvider extends BaseSocket {
     this.emitter.on('data', handler);
     return this;
   }
-  onError(event: any) {
+  netrror(event: any) {
     if (event.code === 'ECONNREFUSED') {
       this.reconnect();
       return;
     }
-    super.onError(event);
+    super.netrror(event);
   }
   onClose(closeEvent: any) {
     if (closeEvent.code !== 1000 || closeEvent.wasClean === false) {
@@ -158,7 +158,7 @@ class WSProvider extends BaseSocket {
     if (this.hasSubscription(subscriptionId)) {
       return this.send(payload).then((response) => {
         if (response) {
-          this.removeEventListener(this.getSubscriptionEvent(subscriptionId));
+          this.removeEventListener(this.getSubscriptinetvent(subscriptionId));
           delete this.subscriptions[subscriptionId];
         }
 
@@ -193,7 +193,7 @@ class WSProvider extends BaseSocket {
     this.connection.onopen = this.onReady.bind(this);
     this.connection.onopen = this.onConnect.bind(this);
     this.connection.onclose = this.onClose.bind(this);
-    this.connection.onerror = this.onError.bind(this);
+    this.connection.netrror = this.netrror.bind(this);
   }
 
   onMessage(msg: MessageEvent) {
@@ -209,7 +209,7 @@ class WSProvider extends BaseSocket {
         // tslint:disable-next-line: prefer-conditional-expression
         if (typeof result.id === 'undefined') {
           event =
-            this.getSubscriptionEvent(result.params.subscription) || result.params.subscription;
+            this.getSubscriptinetvent(result.params.subscription) || result.params.subscription;
           // result = result.params;
         } else {
           event = result.id;
@@ -240,7 +240,7 @@ class WSProvider extends BaseSocket {
     this.emitter.emit(SocketState.SOCKET_CONNECT);
     this.emitter.emit(SocketConnection.CONNECT);
   }
-  getSubscriptionEvent(subscriptionId: any) {
+  getSubscriptinetvent(subscriptionId: any) {
     if (this.subscriptions[subscriptionId]) {
       return subscriptionId;
     }
@@ -255,7 +255,7 @@ class WSProvider extends BaseSocket {
     return event;
   }
   hasSubscription(subscriptionId: string) {
-    return typeof this.getSubscriptionEvent(subscriptionId) !== 'undefined';
+    return typeof this.getSubscriptinetvent(subscriptionId) !== 'undefined';
   }
   validate(response: any, payload?: any) {
     if (isObject(response)) {

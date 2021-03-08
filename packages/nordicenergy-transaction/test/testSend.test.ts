@@ -18,8 +18,8 @@ const http = new HttpProvider('http://mock.com');
 
 const addr = toChecksumAddress('0x' + randomBytes(20));
 
-const msgHttp = new Messenger(http, ChainType.NordicEnergy, ChainID.HmyLocal);
-// const msgWs = new Messenger(ws, ChainType.NordicEnergy, ChainID.HmyLocal);
+const msgHttp = new Messenger(http, ChainType.NordicEnergy, ChainID.NgyLocal);
+// const msgWs = new Messenger(ws, ChainType.NordicEnergy, ChainID.NgyLocal);
 
 const walletHttp = new Wallet(msgHttp);
 // const walletWs = new Wallet(msgWs);
@@ -306,7 +306,7 @@ describe('test send transaction', () => {
           blockHash: '0xd92f3610d52bde907ab42e064d73c2314c058015a7162ee8a4500bc581903cc2',
           blockNumber: '0x18465',
           hash: '0xcff4a3a6fd4eb34b9a7e48e3eca0c8c899de71a1ea21a126cc1048e65b332a72',
-          from: 'one1v5fevthrnfeqjwcl5p0sfq3u34c2gmtqq095at',
+          from: 'net1v5fevthrnfeqjwcl5p0sfq3u34c2gmtqq095at',
           to: 'net18spwh74s5hkg2nva40scx7hwdjpup28dw4dfsg',
           shardID: 0,
           toShardID: 1,

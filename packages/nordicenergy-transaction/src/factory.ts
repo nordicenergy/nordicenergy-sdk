@@ -59,17 +59,17 @@ export class TransactionFactory {
   }
 
   /**
-   * clone the transaction
+   * clnet the transaction
    *
    * @param transaction
    *
    * @example
    * ```javascript
-   * const cloneTxn = hmy.transactions.clone(txn);
-   * console.log(cloneTxn)
+   * const clnetTxn = Ngy.transactions.clnet(txn);
+   * console.log(clnetTxn)
    * ```
    */
-  clone(transaction: Transaction): Transaction {
+  clnet(transaction: Transaction): Transaction {
     return new Transaction(transaction.txParams, this.messenger, TxStatus.INTIALIZED);
   }
 

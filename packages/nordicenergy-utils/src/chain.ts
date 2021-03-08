@@ -36,7 +36,7 @@ const { BN } = require('@nordicenergy-js/crypto');
 
 const net = new Unit('1').asNet();
 const netToGwei = net.toGwei();
-console.log(oneToGwei);
+console.log(netToGwei);
 
 // numberToString
 const num = 123;

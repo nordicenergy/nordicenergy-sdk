@@ -1,28 +1,28 @@
 /**
- # @harmony-js/contract
+ # @nordicenergy-js/contract
 
-This package provides a collection of apis to create, deploy, and interact with smart contracts. In Harmony, smart contracts all fully EVM compatible and the formats and terminologies match 1-to-1 with EVM smart contracts.
+This package provides a collection of apis to create, deploy, and interact with smart contracts. In Nordic Energy, smart contracts all fully EVM compatible and the formats and terminologies match 1-to-1 with EVM smart contracts.
 
 ## Installation
 
 ```
-npm install @harmony-js/contract
+npm install @nordicenergy-js/contract
 ```
 
 ## Usage
 
 Deploying a contract using `contractConstructor`
 ```javascript
-const { ContractFactory } = require('@harmony-js/contract');
-const { Wallet } = require('@harmony-js/account');
-const { Messenger, HttpProvider } = require('@harmony-js/network');
-const { ChainID, ChainType, hexToNumber } = require('@harmony-js/utils');
+const { ContractFactory } = require('@nordicenergy-js/contract');
+const { Wallet } = require('@nordicenergy-js/account');
+const { Messenger, HttpProvider } = require('@nordicenergy-js/network');
+const { ChainID, ChainType, hexToNumber } = require('@nordicenergy-js/utils');
 
 * const wallet = new Wallet(
 *   new Messenger(
-*     new HttpProvider('https://api.s0.b.hmny.io'),
-*     ChainType.Harmony,
-*     ChainID.HmyTestnet,
+*     new HttpProvider('https://api.s0.b.nordicenergy.io'),
+*     ChainType.NordicEnergy,
+*     ChainID.NgyTestnet,
 *   ),
 * );
 * const factory = new ContractFactory(wallet);
@@ -48,31 +48,31 @@ Instead of `contract.methods.contractConstructor`, `contract.deploy` could be us
 
 Loading a contract object using the contract json and contract address for interacting with it
 ```javascript
-* const { Harmony } = require("@harmony-js/core");
-* const { ChainID, ChainType } = require("@harmony-js/utils");
-* const hmy = new Harmony("https://api.s0.b.hmny.io", {
-*   chainType: ChainType.Harmony,
-*   chainId: ChainID.HmyTestnet,
+* const { Nordic Energy } = require("@nordicenergy-js/core");
+* const { ChainID, ChainType } = require("@nordicenergy-js/utils");
+* const Ngy = new Nordic Energy("https://api.s0.b.nordicenergy.io", {
+*   chainType: ChainType.NordicEnergy,
+*   chainId: ChainID.NgyTestnet,
 * });
 
 const contractJson = require("./Counter.json");
 const contractAddr = "0x19f64050e6b2d376e52AC426E366c49EEb0724B1";
 
-const contract = hmy.contracts.createContract(contractJson.abi, contractAddr);
+const contract = Ngy.contracts.createContract(contractJson.abi, contractAddr);
 console.log(contract.methods);
 ```
 
 Directly loading contract using `ContractFactory`
 ```javascript
-const { ContractFactory } = require('@harmony-js/contract');
-const { Wallet } = require('@harmony-js/account');
-const { Messenger, HttpProvider } = require('@harmony-js/network');
-const { ChainID, ChainType, hexToNumber } = require('@harmony-js/utils');
+const { ContractFactory } = require('@nordicenergy-js/contract');
+const { Wallet } = require('@nordicenergy-js/account');
+const { Messenger, HttpProvider } = require('@nordicenergy-js/network');
+const { ChainID, ChainType, hexToNumber } = require('@nordicenergy-js/utils');
 
 * const wallet = new Wallet(new Messenger(
-*   new HttpProvider('https://api.s0.b.hmny.io'),
-*   ChainType.Harmony,
-*   ChainID.HmyTestnet,
+*   new HttpProvider('https://api.s0.b.nordicenergy.io'),
+*   ChainType.NordicEnergy,
+*   ChainID.NgyTestnet,
 * ));
 const factory = new ContractFactory(wallet);
 const contract = factory.createContract(contractJson.abi, contractAddr);
@@ -87,7 +87,7 @@ Estimate gas for contract methods
 * });
 ```
 
-Call contract read-only methods. Harmony uses 1 Gwei gas price and gas limit of 21000 by default. Use the estimate gas api to correctly set the gas limit.
+Call contract read-only methods. Nordic Energy uses 1 Gwei gas price and gas limit of 21000 by default. Use the estimate gas api to correctly set the gas limit.
 ```javascript
 * const options1 = { gasPrice: '0x3B9ACA00' }; // gas price in hex corresponds to 1 Gwei or 1000000000
 * let options2 = { gasPrice: 1000000000, gasLimit: 21000 }; // setting the default gas limit, but changing later based on estimate gas
@@ -119,17 +119,17 @@ All the above apis can also be asynchronously executed using `async` and `await`
 
 Subscribing to the contract events requires web socket based messenger.
 ```javascript
-* const { ContractFactory } = require('@harmony-js/contract');
-* const { Wallet } = require('@harmony-js/account');
-* const { Messenger, WSProvider } = require('@harmony-js/network');
-* const { ChainID, ChainType, hexToNumber } = require('@harmony-js/utils');
-* const ws = new WSProvider('wss://ws.s0.b.hmny.io');
+* const { ContractFactory } = require('@nordicenergy-js/contract');
+* const { Wallet } = require('@nordicenergy-js/account');
+* const { Messenger, WSProvider } = require('@nordicenergy-js/network');
+* const { ChainID, ChainType, hexToNumber } = require('@nordicenergy-js/utils');
+* const ws = new WSProvider('wss://ws.s0.b.nordicenergy.io');
 
 * const wallet = new Wallet(
 *   new Messenger(
 *     ws,
-*     ChainType.Harmony,
-*     ChainID.HmyTestnet,
+*     ChainType.NordicEnergy,
+*     ChainID.NgyTestnet,
 *   ),
 * );
 * const factory = new ContractFactory(wallet);
@@ -148,10 +148,10 @@ Subscribing to the contract events requires web socket based messenger.
 ```
  *
  * @packageDocumentation
- * @module harmony-contract
+ * @module nordicenergy-contract
  */
 
-// this file is mainly ported from `ethers.js`, but done some fixes
+// this file is mainly ported from `ethers.js`, but dnet some fixes
 // 1. added bytesPadRight support
 // 2. ts-lint
 // 3. use BN as default Bignumber instance
@@ -171,13 +171,13 @@ import {
   Arrayish,
   checkNew,
   bytesPadRight,
-} from '@harmony-js/crypto';
-import { hexToBN, defineReadOnly } from '@harmony-js/utils';
+} from '@nordicenergy-js/crypto';
+import { hexToBN, defineReadOnly } from '@nordicenergy-js/utils';
 
 /** @hidden */
-const NegativeOne: BN = new BN(-1);
+const Negativenet: BN = new BN(-1);
 /** @hidden */
-const One: BN = new BN(1);
+const net: BN = new BN(1);
 /** @hidden */
 const Zero: BN = new BN(0);
 /** @hidden */
@@ -195,7 +195,7 @@ export interface ParamType {
   name?: string;
   type: string;
   indexed?: boolean;
-  components?: any[];
+  compnetnts?: any[];
 }
 
 // @TODO: should this just be a combined Fragment?
@@ -283,7 +283,7 @@ interface ParseNode {
   name?: string;
   state?: ParseState;
   indexed?: boolean;
-  components?: any[];
+  compnetnts?: any[];
 }
 
 /** @hidden */
@@ -320,8 +320,8 @@ function parseParam(param: string, allowIndexed?: boolean): ParamType {
           node.type = verifyType(node.type);
         }
 
-        node.components = [{ type: '', name: '', parent: node, state: { allowType: true } }];
-        node = node.components[0];
+        node.compnetnts = [{ type: '', name: '', parent: node, state: { allowType: true } }];
+        node = node.compnetnts[0];
         break;
 
       case ')':
@@ -364,14 +364,14 @@ function parseParam(param: string, allowIndexed?: boolean): ParamType {
           parent: node.parent,
           state: { allowType: true },
         };
-        node.parent.components.push(sibling);
+        node.parent.compnetnts.push(sibling);
         delete node.parent;
         node = sibling;
         break;
 
       // Hit a space...
       case ' ':
-        // If reading type, the type is done and may read a param or name
+        // If reading type, the type is dnet and may read a param or name
         if (node.state) {
           if (node.state.allowType) {
             if (node.type !== '' && node.type) {
@@ -382,7 +382,7 @@ function parseParam(param: string, allowIndexed?: boolean): ParamType {
             }
           }
 
-          // If reading name, the name is done
+          // If reading name, the name is dnet
           if (node.state.allowName) {
             if (node.name !== '') {
               if (allowIndexed && node.name === 'indexed') {
@@ -614,7 +614,7 @@ export function formatSignature(fragment: EventFragment | FunctionFragment): str
 /** @hidden */
 export function parseSignature(fragment: string): EventFragment | FunctionFragment {
   if (typeof fragment === 'string') {
-    // Make sure the "returns" is surrounded by a space and all whitespace is exactly one space
+    // Make sure the "returns" is surrounded by a space and all whitespace is exactly net space
     fragment = fragment.replace(/\s/g, ' ');
     fragment = fragment
       .replace(/\(/g, ' (')
@@ -668,7 +668,7 @@ abstract class Coder {
   abstract decode(data: Uint8Array, offset: number): DecodedResult;
 }
 
-// Clones the functionality of an existing Coder, but without a localName
+// Clnets the functionality of an existing Coder, but without a localName
 // tslint:disable-next-line: max-classes-per-file
 /** @hidden */
 class CoderAnonymous extends Coder {
@@ -735,7 +735,7 @@ class CoderNumber extends Coder {
         if (v.gt(bounds)) {
           throw new Error('out-of-bounds');
         }
-        bounds = bounds.add(One).mul(NegativeOne);
+        bounds = bounds.add(net).mul(Negativenet);
         if (v.lt(bounds)) {
           throw new Error('out-of-bounds');
         }
@@ -793,7 +793,7 @@ const uint256Coder = new CoderNumber(
   },
   32,
   false,
-  'none',
+  'nnet',
 );
 
 // tslint:disable-next-line: max-classes-per-file
@@ -1298,15 +1298,15 @@ const paramTypeSimple: { [key: string]: any } = {
 /** @hidden */
 function getTupleParamCoder(
   coerceFunc: CoerceFunc,
-  components: any[],
+  compnetnts: any[],
   localName: string,
 ): CoderTuple {
-  if (!components) {
-    components = [];
+  if (!compnetnts) {
+    compnetnts = [];
   }
   const coders: Coder[] = [];
-  components.forEach((component) => {
-    coders.push(getParamCoder(coerceFunc, component));
+  compnetnts.forEach((compnetnt) => {
+    coders.push(getParamCoder(coerceFunc, compnetnt));
   });
 
   return new CoderTuple(coerceFunc, coders, localName);
@@ -1352,7 +1352,7 @@ function getParamCoder(coerceFunc: CoerceFunc, param: ParamType | any): any {
   }
 
   if (param.type.substring(0, 5) === 'tuple') {
-    return getTupleParamCoder(coerceFunc, param.components || [], param.name || '');
+    return getTupleParamCoder(coerceFunc, param.compnetnts || [], param.name || '');
   }
 
   if (param.type === '') {
@@ -1673,7 +1673,7 @@ export class AbiCoder {
     types.forEach((type) => {
       // Convert types to type objects
       //   - "uint foo" => { type: "uint", name: "foo" }
-      //   - "tuple(uint, uint)" => { type: "tuple", components: [ { type: "uint" }, { type: "uint" }, ] }
+      //   - "tuple(uint, uint)" => { type: "tuple", compnetnts: [ { type: "uint" }, { type: "uint" }, ] }
 
       let typeObject: ParamType | null = null;
       // tslint:disable-next-line: prefer-conditional-expression

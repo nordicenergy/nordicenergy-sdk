@@ -55,7 +55,7 @@ declare namespace Elliptic {
     fromPrivate(ec: Curve, priv: BN, enc: string): KeyPair;
     // this is broken, but we can't fix it without changing the upstream
     // library; compact is optional, but optional parameters should always
-    // _follow_ mandatory ones.
+    // _follow_ mandatory nets.
     getPublic(compact: boolean, enc: string): string;
     getPrivate<T = undefined>(enc?: T): T extends HexEnc ? string : BN;
     validate(): { result: boolean; reason: string | null };

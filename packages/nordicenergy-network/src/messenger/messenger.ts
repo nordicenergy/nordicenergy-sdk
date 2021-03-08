@@ -318,7 +318,7 @@ class Messenger extends NordicEnergyCore {
   /**
    * @example
    * ```
-   * hmy.messenger.getShardProvider()
+   * Ngy.messenger.getShardProvider()
    * ```
    */
   getShardProvider(shardID: number): HttpProvider | WSProvider {
@@ -334,7 +334,7 @@ class Messenger extends NordicEnergyCore {
   /**
    * @example
    * ```
-   * hmy.messenger.getCurrentShardID()
+   * Ngy.messenger.getCurrentShardID()
    * ```
    */
 

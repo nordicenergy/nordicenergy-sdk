@@ -10,7 +10,7 @@ npm install @nordicenergy-js/account
 
 ## Usage
 
-Creating new account and display hex and bech32 (one) addresses 
+Creating new account and display hex and bech32 (net) addresses 
 ```javascript
 const account = new Account(); // or const account = Account.new()
 console.log(account.checksumAddress);
@@ -97,8 +97,8 @@ const { Unit } = require('@nordicenergy-js/utils');
 const factory = new TransactionFactory();
 
 const txn = factory.newTx({
-  to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
-  value: new Unit(1).asOne().toWei(),
+  to: 'net166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+  value: new Unit(1).asnet().toWei(),
   // gas limit, you can use string
   gasLimit: '21000',
   // send token from shardID
@@ -116,7 +116,7 @@ account.signTransaction(txn).then((signedTxn) => {
 
 Similarily staking transactions can be created and signed using account.
 
-A wallet represents user wallet that can hold one or more user accounts.
+A wallet represents user wallet that can hold net or more user accounts.
 
 Creating an empty wallet
 ```javascript
@@ -191,7 +191,7 @@ Sign transaction using wallet, will sign the transaction using the wallet signer
 ```javascript
 const txn = factory.newTx({
   to: 'net166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
-  value: new Unit(1).asOne().toWei(),
+  value: new Unit(1).asnet().toWei(),
   // gas limit, you can use string
   gasLimit: '21000',
   // send token from shardID

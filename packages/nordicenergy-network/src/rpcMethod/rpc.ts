@@ -1,21 +1,21 @@
 /**
- # @harmony-js/network
+ # @nordicenergy-js/network
 
 This package provides a collection of apis to create messengers (HTTP, WebSocket) to connect to blockchain networks.
 
 ## Installation
 
 ```
-npm install @harmony-js/network
+npm install @nordicenergy-js/network
 ```
 
 ## Usage
 
 ```javascript
-const { Messenger, HttpProvider, WSProvider } = require('@harmony-js/network');
-const { ChainID, ChainType } = require('@harmony-js/utils');
-const testnetHTTP = 'https://api.s0.b.hmny.io';
-const testnetWS = 'wss://ws.s0.b.hmny.io';
+const { Messenger, HttpProvider, WSProvider } = require('@nordicenergy-js/network');
+const { ChainID, ChainType } = require('@nordicenergy-js/utils');
+const testnetHTTP = 'https://api.s0.b.nordicenergy.io';
+const testnetWS = 'wss://ws.s0.b.nordicenergy.io';
 const localHTTP = 'http://localhost:9500/';
 const localWS = 'http://localhost:9800/';
 const http = new HttpProvider(testnetHTTP); // for local use localHTTP
@@ -25,7 +25,7 @@ const customWSMessenger = new Messenger(ws, ChainType.NordicEnergy, ChainID.netT
 ```
  *
  * @packageDocumentation
- * @module harmony-network
+ * @module nordicenergy-network
  */
 
 /**@ignore */

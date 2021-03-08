@@ -85,7 +85,7 @@ class BaseSocket extends BaseProvider {
     this.emitter.emit(SocketConnection.READY, event);
     this.emitter.emit(SocketState.SOCKET_READY, event);
   }
-  onError(error: any) {
+  netrror(error: any) {
     this.emitter.emit(SocketConnection.ERROR, error);
     this.emitter.emit(SocketState.SOCKET_ERROR, error);
     this.removeAllSocketListeners();

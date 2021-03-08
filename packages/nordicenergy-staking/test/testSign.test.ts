@@ -14,8 +14,8 @@ import fetch from 'jest-fetch-mock';
 const http = new HttpProvider('http://mock.com');
 // const ws = new WSProvider('ws://mock.com');
 
-const msgHttp = new Messenger(http, ChainType.NordicEnergy, ChainID.HmyLocal);
-// const msgWs = new Messenger(ws, ChainType.NordicEnergy, ChainID.HmyLocal);
+const msgHttp = new Messenger(http, ChainType.NordicEnergy, ChainID.NgyLocal);
+// const msgWs = new Messenger(ws, ChainType.NordicEnergy, ChainID.NgyLocal);
 
 const walletHttp = new Wallet(msgHttp);
 

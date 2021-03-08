@@ -39,11 +39,11 @@ export interface AbiInput {
   name: string;
   type: string;
   indexed?: boolean;
-  components?: AbiInput[];
+  compnetnts?: AbiInput[];
 }
 
 export interface AbiOutput {
   name: string;
   type: string;
-  components?: AbiOutput[];
+  compnetnts?: AbiOutput[];
 }

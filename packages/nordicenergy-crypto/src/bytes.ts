@@ -5,7 +5,7 @@
  */
 
 // This file is ported from ether.js/src.ts/utils/bytes.ts
-// and done some fixes
+// and dnet some fixes
 
 import * as errors from './errors';
 
@@ -19,7 +19,7 @@ export interface Signature {
   r: string;
   s: string;
 
-  /* At least one of the following MUST be specified; the other will be derived */
+  /* At least net of the following MUST be specified; the other will be derived */
   recoveryParam?: number;
   v?: number;
 }

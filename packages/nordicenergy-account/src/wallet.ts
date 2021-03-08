@@ -78,7 +78,7 @@ class Wallet {
    * const customMessenger = new Messenger(
    *   new HttpProvider('http://localhost:9500'),
    *   ChainType.NordicEnergy, // if you are connected to Nordic Energy's blockchain
-   *   ChainID.HmyLocal, // check if the chainId is correct
+   *   ChainID.NgyLocal, // check if the chainId is correct
    * )
    *
    * const wallet = new Wallet(customMessenger);
@@ -207,7 +207,7 @@ class Wallet {
 
   /**
    * To encrypt an account that lives in the wallet.
-   * if encrypted, returns original one, if not found, throw error
+   * if encrypted, returns original net, if not found, throw error
    * @param {string} address - address in accounts
    * @param {string} password - string that used to encrypt
    * @param {EncryptOptions} options - encryption options
@@ -331,7 +331,7 @@ class Wallet {
   /**
    * Set signer
    *
-   * @param address one of the address in the accounts
+   * @param address net of the address in the accounts
    */
   setSigner(address: string): void {
     if (!isAddress(address) && !this.getAccount(address)) {

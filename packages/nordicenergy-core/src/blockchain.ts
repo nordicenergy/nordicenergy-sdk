@@ -25,34 +25,34 @@ Create a Nordic Energy instance connecting to testnet
 *   Unit,
 * } = require('@nordicenergy-js/utils');
 
-* const hmy = new nordicenergy(
-*     'https://api.s0.b.hmny.io/',
+* const Ngy = new nordicenergy(
+*     'https://api.s0.b.nordicenergy.io/',
 *     {
 *         chainType: ChainType.NordicEnergy,
-*         chainId: ChainID.HmyTestnet,
+*         chainId: ChainID.NgyTestnet,
 *     },
 * );
 ```
 
 Getting balance of account `net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7`
 ```javascript
-* hmy.blockchain
+* Ngy.blockchain
 *   .getBalance({ address: 'net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7' })
 *   .then((response) => {
-*     console.log('balance in ONEs: ' + fromWei(hexToNumber(response.result), Units.one));
+*     console.log('balance in nets: ' + fromWei(hexToNumber(response.result), Units.net));
 *   });
 ```
 
 Getting the latest block number
 ```javascript
-* hmy.blockchain.getBlockNumber().then((response) => {
+* Ngy.blockchain.getBlockNumber().then((response) => {
 *   console.log('current block number: ' + hexToNumber(response.result));
 * });
 ```
 
 Getting the block using block hash
 ```javascript
-* hmy.blockchain
+* Ngy.blockchain
 *   .getBlockByHash({
 *     blockHash: '0x08c46ae7249362a7d1f602d44c5a81f33ebdab6a7dcb6068f99610b57911aafd',
 *   })
@@ -63,7 +63,7 @@ Getting the block using block hash
 
 Getting the block using block number
 ```javascript
-* hmy.blockchain
+* Ngy.blockchain
 *   .getBlockByNumber({
 *     blockNumber: numberToHex(422635),
 *   })
@@ -131,20 +131,20 @@ Getting the transaction count of an account
 
 Getting the shard structure and details
 ```javascript
-* hmy.blockchain.getShardingStructure().then((response) => {
+* Ngy.blockchain.getShardingStructure().then((response) => {
 *   console.log(response.result);
 * });
 ```
 
 Transferring funds using `sendTransaction`
 ```javascript
-// key corresponds to one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
-* hmy.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
+// key corresponds to net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
+* Ngy.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
 
 * async function transfer() {
-*   const txn = hmy.transactions.newTx({
-*     to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
-*     value: new Unit(1).asOne().toWei(),
+*   const txn = Ngy.transactions.newTx({
+*     to: 'net166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+*     value: new Unit(1).asnet().toWei(),
 *     // gas limit, you can use string
 *     gasLimit: '21000',
 *     // send token from shardID
@@ -152,12 +152,12 @@ Transferring funds using `sendTransaction`
 *     // send token to toShardID
 *     toShardID: 0,
 *     // gas Price, you can use Unit class, and use Gwei, then remember to use toWei(), which will be transformed to BN
-*     gasPrice: new hmy.utils.Unit('1').asGwei().toWei(),
+*     gasPrice: new Ngy.utils.Unit('1').asGwei().toWei(),
 *   });
 
 *   // sign the transaction use wallet;
-*   const signedTxn = await hmy.wallet.signTransaction(txn);
-*   const txnHash = await hmy.blockchain.sendTransaction(signedTxn);
+*   const signedTxn = await Ngy.wallet.signTransaction(txn);
+*   const txnHash = await Ngy.blockchain.sendTransaction(signedTxn);
 *   console.log(txnHash.result);
 * }
 
@@ -862,7 +862,7 @@ class Blockchain {
    * async function transfer() {
    *   const txn = net.transactions.newTx({
    *     //  token send to
-   *     to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+   *     to: 'net166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
    *     // amount to send
    *     value: '10000',
    *     // gas limit, you can use string
@@ -1057,7 +1057,7 @@ class Blockchain {
    *
    * @warning
    * ```
-   * At present, this function hmy_estimateGas is not implement yet, will Coming soon!!!
+   * At present, this function Ngy_estimateGas is not implement yet, will Coming soon!!!
    * ```
    *
    * @example
@@ -1164,7 +1164,7 @@ class Blockchain {
    *   {
    *     // chainType set to nordicenergy
    *     chainType: ChainType.NordicEnergy,
-   *     // chainType set to HmyLocal
+   *     // chainType set to NgyLocal
    *     chainId: ChainID.NetLocal,
    *   },
    * );
@@ -1193,7 +1193,7 @@ class Blockchain {
    *   {
    *     // chainType set to nordicenergy
    *     chainType: ChainType.NordicEnergy,
-   *     // chainType set to HmyLocal
+   *     // chainType set to NgyLocal
    *     chainId: ChainID.NetLocal,
    *   },
    * );
@@ -1222,8 +1222,8 @@ class Blockchain {
    *   {
    *     // chainType set to nordicenergy
    *     chainType: ChainType.NordicEnergy,
-   *     // chainType set to HmyLocal
-   *     chainId: ChainID.HmyLocal,
+   *     // chainType set to NgyLocal
+   *     chainId: ChainID.NgyLocal,
    *   },
    * );
    *
@@ -1251,7 +1251,7 @@ class Blockchain {
    *   {
    *     // chainType set to nordicenergy
    *     chainType: ChainType.NordicEnergy,
-   *     // chainType set to HmyLocal
+   *     // chainType set to NgyLocal
    *     chainId: ChainID.NetLocal,
    *   },
    * );

@@ -1,19 +1,19 @@
-# @harmony-js/transaction
+# @nordicenergy-js/transaction
 
 This package provides a collection of apis to create, sign/send transaction, and receive confirm/receipt.
 
 ## Installation
 
 ```
-npm install @harmony-js/transaction
+npm install @nordicenergy-js/transaction
 ```
 
 ## Usage
 
-Create a Harmony instance connecting to testnet
+Create a Nordic Energy instance connecting to testnet
 
 ```javascript
-const { Harmony } = require('@harmony-js/core');
+const { Nordic Energy } = require('@nordicenergy-js/core');
 const {
   ChainID,
   ChainType,
@@ -22,22 +22,22 @@ const {
   fromWei,
   Units,
   Unit,
-} = require('@harmony-js/utils');
+} = require('@nordicenergy-js/utils');
 
-const hmy = new Harmony(
-    'https://api.s0.b.hmny.io/',
+const Ngy = new Nordic Energy(
+    'https://api.s0.b.nordicenergy.io/',
     {
-        chainType: ChainType.Harmony,
-        chainId: ChainID.HmyTestnet,
+        chainType: ChainType.NordicEnergy,
+        chainId: ChainID.NgyTestnet,
     },
 );
 ```
 
 Creating a new transaction using parameters
 ```javascript
-const txn = hmy.transactions.newTx({
-  to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
-  value: new Unit(1).asOne().toWei(),
+const txn = Ngy.transactions.newTx({
+  to: 'net166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+  value: new Unit(1).asnet().toWei(),
   // gas limit, you can use string
   gasLimit: '21000',
   // send token from shardID
@@ -45,14 +45,14 @@ const txn = hmy.transactions.newTx({
   // send token to toShardID
   toShardID: 0,
   // gas Price, you can use Unit class, and use Gwei, then remember to use toWei(), which will be transformed to BN
-  gasPrice: new hmy.utils.Unit('1').asGwei().toWei(),
+  gasPrice: new Ngy.utils.Unit('1').asGwei().toWei(),
 });
 ```
 
 Recovering transaction from raw transaction hash
 ```javascript
 const raw = '0xf86d21843b9aca00825208808094d6ba69da5b45ec98b53e3258d7de756a567b6763880de0b6b3a76400008028a0da8887719f377401963407fc1d82d2ab52404600cf7bea37c27bd2dfd7c86aaaa03c405b0843394442b303256a804bde835821a8a77bd88a2ced9ffdc8b0a409e9';
-const tx = hmy.transactions.recover(raw);
+const tx = Ngy.transactions.recover(raw);
 ```
 
 Getting the RLP encoding of a transaction (rawTransaction), along with raw transaction field values that were encoded
@@ -62,10 +62,10 @@ const [encoded, raw] = txn.getRLPUnsigned()
 
 Sign the transaction using a wallet and send the transaction, wait for confirmation and print receipt
 ```javascript
-// key corresponds to one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
-hmy.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
+// key corresponds to net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
+Ngy.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
 
-hmy.wallet.signTransaction(txn).then(signedTxn => {
+Ngy.wallet.signTransaction(txn).then(signedTxn => {
   signedTxn.sendTransaction().then(([tx, hash]) => {
     console.log('tx hash: ' + hash);
     signedTxn.confirm(hash).then(response => {
@@ -78,9 +78,9 @@ hmy.wallet.signTransaction(txn).then(signedTxn => {
 Asynchronous transaction sign, send, and confirm
 ```javascript
 async function transfer() {
-  hmy.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
+  Ngy.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
 
-  const signedTxn = await hmy.wallet.signTransaction(txn);
+  const signedTxn = await Ngy.wallet.signTransaction(txn);
   signedTxn
     .observed()
     .on('transactionHash', (txnHash) => {
@@ -126,7 +126,7 @@ async function transfer() {
       console.log('');
       console.log('please see detail in explorer:');
       console.log('');
-      console.log('https://explorer.testnet.harmony.one/#/tx/' + txnHash);
+      console.log('https://explorer.testnet.Nordic Energy.net/#/tx/' + txnHash);
       console.log('');
       process.exit();
     }
@@ -139,7 +139,7 @@ async function transfer() {
     console.log('');
     console.log('please see detail in explorer:');
     console.log('');
-    console.log('https://explorer.testnet.harmony.one/#/tx/' + txnHash);
+    console.log('https://explorer.testnet.Nordic Energy.net/#/tx/' + txnHash);
     console.log('');
     process.exit();
   }

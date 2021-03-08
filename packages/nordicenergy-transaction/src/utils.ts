@@ -248,7 +248,7 @@ export const sleep = async (ms: number) =>
     setTimeout(() => resolve(), ms);
   });
 
-export enum TransactionEvents {
+export enum Transactinetvents {
   transactionHash = 'transactionHash',
   error = 'error',
   confirmation = 'confirmation',

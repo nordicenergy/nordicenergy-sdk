@@ -5,7 +5,7 @@ This package provides a collection of apis to interact with Nordic Energy blockc
 ## Installation
 
 ```
-npm install @harmony-js/core
+npm install @nordicenergy-js/core
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install @harmony-js/core
 Create a Nordic Energy instance connecting to testnet
 
 ```javascript
-const { NordicEnergy } = require('@nordicenergy-js/core');
+const { Nordic Energy } = require('@nordicenergy-js/core');
 const {
   ChainID,
   ChainType,
@@ -22,36 +22,36 @@ const {
   fromWei,
   Units,
   Unit,
-} = require('@harmony-js/utils');
+} = require('@nordicenergy-js/utils');
 
-const hmy = new Harmony(
-    'https://api.s0.b.hmny.io/',
+const Ngy = new Nordic Energy(
+    'https://api.s0.b.nordicenergy.io/',
     {
-        chainType: ChainType.Harmony,
-        chainId: ChainID.HmyTestnet,
+        chainType: ChainType.NordicEnergy,
+        chainId: ChainID.NgyTestnet,
     },
 );
 ```
 
-Getting balance of account `one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7`
+Getting balance of account `net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7`
 ```javascript
-hmy.blockchain
-  .getBalance({ address: 'one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7' })
+Ngy.blockchain
+  .getBalance({ address: 'net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7' })
   .then((response) => {
-    console.log('balance in ONEs: ' + fromWei(hexToNumber(response.result), Units.one));
+    console.log('balance in nets: ' + fromWei(hexToNumber(response.result), Units.net));
   });
 ```
 
 Getting the latest block number
 ```javascript
-hmy.blockchain.getBlockNumber().then((response) => {
+Ngy.blockchain.getBlockNumber().then((response) => {
   console.log('current block number: ' + hexToNumber(response.result));
 });
 ```
 
 Getting the block using block hash
 ```javascript
-hmy.blockchain
+Ngy.blockchain
   .getBlockByHash({
     blockHash: '0x08c46ae7249362a7d1f602d44c5a81f33ebdab6a7dcb6068f99610b57911aafd',
   })
@@ -62,7 +62,7 @@ hmy.blockchain
 
 Getting the block using block number
 ```javascript
-hmy.blockchain
+Ngy.blockchain
   .getBlockByNumber({
     blockNumber: numberToHex(422635),
   })
@@ -73,7 +73,7 @@ hmy.blockchain
 
 Getting the transaction using hash
 ```javascript
-hmy.blockchain
+Ngy.blockchain
   .getTransactionByHash({
     txnHash: '0x56c73eb993b18dc04baacec5c2e9d1292a090f6a978a4a1c461db5255fcbc831',
   })
@@ -84,7 +84,7 @@ hmy.blockchain
 
 Getting the transaction receipt
 ```javascript
-hmy.blockchain
+Ngy.blockchain
   .getTransactionReceipt({
     txnHash: '0x56c73eb993b18dc04baacec5c2e9d1292a090f6a978a4a1c461db5255fcbc831',
   })
@@ -95,7 +95,7 @@ hmy.blockchain
 
 Getting the cross-shard transaction receipt
 ```javascript
-hmy.blockchain
+Ngy.blockchain
   .getCxReceiptByHash({
     txnHash: '0xcd36a90ff5d5373285c2896ba7bbcd3f5324263c0cb8ecfb7cad2f5fc2fbdbda',
     shardID: 1,
@@ -107,7 +107,7 @@ hmy.blockchain
 
 Getting the deployed smart contract code
 ```javascript
-hmy.blockchain
+Ngy.blockchain
   .getCode({
     address: '0x08AE1abFE01aEA60a47663bCe0794eCCD5763c19',
     blockNumber: 'latest',
@@ -119,9 +119,9 @@ hmy.blockchain
 
 Getting the transaction count of an account
 ```javascript
-hmy.blockchain
+Ngy.blockchain
   .getTransactionCount({
-    address: 'one1pdv9lrdwl0rg5vglh4xtyrv3wjk3wsqket7zxy',
+    address: 'net1pdv9lrdwl0rg5vglh4xtyrv3wjk3wsqket7zxy',
   })
   .then((response) => {
     console.log(hexToNumber(response.result));
@@ -130,20 +130,20 @@ hmy.blockchain
 
 Getting the shard structure and details
 ```javascript
-hmy.blockchain.getShardingStructure().then((response) => {
+Ngy.blockchain.getShardingStructure().then((response) => {
   console.log(response.result);
 });
 ```
 
 Transferring funds using `sendTransaction`
 ```javascript
-// key corresponds to one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
-hmy.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
+// key corresponds to net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
+Ngy.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
 
 async function transfer() {
-  const txn = hmy.transactions.newTx({
-    to: 'one166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
-    value: new Unit(1).asOne().toWei(),
+  const txn = Ngy.transactions.newTx({
+    to: 'net166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
+    value: new Unit(1).asnet().toWei(),
     // gas limit, you can use string
     gasLimit: '21000',
     // send token from shardID
@@ -151,12 +151,12 @@ async function transfer() {
     // send token to toShardID
     toShardID: 0,
     // gas Price, you can use Unit class, and use Gwei, then remember to use toWei(), which will be transformed to BN
-    gasPrice: new hmy.utils.Unit('1').asGwei().toWei(),
+    gasPrice: new Ngy.utils.Unit('1').asGwei().toWei(),
   });
 
   // sign the transaction use wallet;
-  const signedTxn = await hmy.wallet.signTransaction(txn);
-  const txnHash = await hmy.blockchain.sendTransaction(signedTxn);
+  const signedTxn = await Ngy.wallet.signTransaction(txn);
+  const txnHash = await Ngy.blockchain.sendTransaction(signedTxn);
   console.log(txnHash.result);
 }
 

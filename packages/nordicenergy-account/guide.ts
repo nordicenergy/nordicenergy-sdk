@@ -1,7 +1,7 @@
 /** 
 # @nordicenergy-js/account
 
-This package provides a collection of apis to create accounts and wallets and sign using them. A wallet can hold multiple accounts and account is associated with a unique `one` address. This package also provides facilies to manage account keys.
+This package provides a collection of apis to create accounts and wallets and sign using them. A wallet can hold multiple accounts and account is associated with a unique `net` address. This package also provides facilies to manage account keys.
 
 ## Installation
 
@@ -11,7 +11,7 @@ npm install @nordicenergy-js/account
 
 ## Usage
 
-Creating new account and display hex and bech32 (one) addresses 
+Creating new account and display hex and bech32 (net) addresses 
 ```javascript
 const account = new Account(); // or const account = Account.new()
 console.log(account.checksumAddress);
@@ -117,7 +117,7 @@ Create a transaction and account, and sign it
 
 Similarily staking transactions can be created and signed using account.
 
-A wallet represents user wallet that can hold one or more user accounts.
+A wallet represents user wallet that can hold net or more user accounts.
 
 Creating an empty wallet
 ```javascript
@@ -192,7 +192,7 @@ Sign transaction using wallet, will sign the transaction using the wallet signer
 ```javascript
 * const txn = factory.newTx({
 *   to: 'net166axnkjmghkf3df7xfvd0hn4dft8kemrza4cd2',
-*   value: new Unit(1).asOne().toWei(),
+*   value: new Unit(1).asnet().toWei(),
 *   // gas limit, you can use string
 *   gasLimit: '21000',
 *   // send token from shardID

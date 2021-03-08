@@ -116,7 +116,7 @@ class Transaction extends TransactionBase {
           };
 
     this.receipt = params && params.receipt ? params.receipt : undefined;
-    this.cxStatus = this.isCrossShard() ? TxStatus.INTIALIZED : TxStatus.NONE;
+    this.cxStatus = this.isCrossShard() ? TxStatus.INTIALIZED : TxStatus.Nnet;
   }
 
   /**

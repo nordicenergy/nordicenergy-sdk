@@ -129,7 +129,7 @@ export const bech32Decode = (bechString: string) => {
 
 // HRP is the human-readable part of Nordic Energy bech32 addresses
 export const HRP = 'net';
-export const tHRP = 'tone';
+export const tHRP = 'tnet';
 
 /**
  * convertBits
@@ -138,7 +138,7 @@ export const tHRP = 'tone';
  *
  * For example, converts byte buffers to buffers of maximum 5 bit numbers,
  * padding those numbers as necessary. Necessary for encoding Ethereum-style
- * addresses as bech32 ones.
+ * addresses as bech32 nets.
  *
  * @param {Buffer} data
  * @param {number} fromWidth
@@ -187,7 +187,7 @@ export const convertBits = (
  * bech32Encodes a canonical 20-byte Ethereum-style address as a bech32 Nordic Energy
  * address.
  *
- * The expected format is one1<address><checksum> where address and checksum
+ * The expected format is net1<address><checksum> where address and checksum
  * are the result of bech32 encoding a Buffer containing the address bytes.
  *
  * @param {string} 20 byte canonical address

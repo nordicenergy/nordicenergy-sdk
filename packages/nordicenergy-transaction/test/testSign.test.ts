@@ -1,15 +1,15 @@
 /**
  * @packageDocumentation
- * @module harmony-transaction
+ * @module nordicenergy-transaction
  * @ignore
  */
 
 import { Transaction } from '../src/transaction';
 import { RLPSign } from '../src/utils';
 import { TxStatus } from '../src/types';
-import { HttpProvider, Messenger } from '@harmony-js/network';
-import { isAddress, ChainType, hexToBN, ChainID, isValidAddress } from '@harmony-js/utils';
-import { getAddressFromPrivateKey, getAddress } from '@harmony-js/crypto';
+import { HttpProvider, Messenger } from '@nordicenergy-js/network';
+import { isAddress, ChainType, hexToBN, ChainID, isValidAddress } from '@nordicenergy-js/utils';
+import { getAddressFromPrivateKey, getAddress } from '@nordicenergy-js/crypto';
 
 import txnVectors from './transactions.fixture.json.js';
 import reTxnVectors from './transactions.remake.fixture.json.js';
@@ -48,8 +48,8 @@ describe('test sign tranction', () => {
     }
   });
 
-  it('should test sign transaction with Harmony settings', () => {
-    const hmyMessenger = new Messenger(provider, ChainType.Harmony, ChainID.Default);
+  it('should test sign transaction with Nordic Energy settings', () => {
+    const NgyMessenger = new Messenger(provider, ChainType.NordicEnergy, ChainID.Default);
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < reTxnVectors.length; i += 1) {
       const vector: any = reTxnVectors[i];
@@ -79,10 +79,10 @@ describe('test sign tranction', () => {
           data: vector.data,
           nonce: vector.nonce,
         },
-        hmyMessenger,
+        NgyMessenger,
         TxStatus.INTIALIZED,
       );
-      transaction.setMessenger(hmyMessenger);
+      transaction.setMessenger(NgyMessenger);
 
       const unsigned = transaction.getRLPUnsigned();
 
@@ -127,13 +127,13 @@ describe('test sign tranction', () => {
       expect(transaction.txParams.from.toLowerCase()).toEqual(vector.accountAddress.toLowerCase());
     }
   });
-  it('should test recover from HarmonySignedTransaction', () => {
-    const hmyMessenger = new Messenger(provider, ChainType.Harmony, ChainID.Default);
+  it('should test recover from Nordic EnergySignedTransaction', () => {
+    const NgyMessenger = new Messenger(provider, ChainType.NordicEnergy, ChainID.Default);
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < reTxnVectors.length; i += 1) {
       const vector = reTxnVectors[i];
-      const factory = new TransactionFactory(hmyMessenger);
-      factory.setMessenger(hmyMessenger);
+      const factory = new TransactionFactory(NgyMessenger);
+      factory.setMessenger(NgyMessenger);
       const transaction: Transaction = factory.recover(vector.signedTransaction);
 
       if (vector.gasLimit && vector.gasLimit !== '0x') {
@@ -166,9 +166,9 @@ describe('test sign tranction', () => {
     }
   });
   it('should test transactionFactory', () => {
-    const hmyMessenger = new Messenger(provider, ChainType.Harmony, ChainID.Default);
-    const factory = new TransactionFactory(hmyMessenger);
-    factory.setMessenger(hmyMessenger);
+    const NgyMessenger = new Messenger(provider, ChainType.NordicEnergy, ChainID.Default);
+    const factory = new TransactionFactory(NgyMessenger);
+    factory.setMessenger(NgyMessenger);
     const txn = factory.newTx({});
     expect(txn.getRLPUnsigned()[0]).toBeTruthy();
     const txn2 = factory.newTx({}, true);

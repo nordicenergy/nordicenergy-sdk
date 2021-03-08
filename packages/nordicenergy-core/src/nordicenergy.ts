@@ -53,7 +53,7 @@ export class NordicEnergy extends utils.NordicEnergyCore {
   /**
    * Create a nordicenergy instance
    *
-   * @param url The end-points of the hmy blockchain
+   * @param url The end-points of the Ngy blockchain
    * @param config set up `ChainID` and `ChainType`, typically we can use the default values
    *
    * @example
@@ -197,7 +197,7 @@ export class NordicEnergy extends utils.NordicEnergyCore {
    *
    * @example
    * ```javascript
-   * hmy.shardingStructures([
+   * Ngy.shardingStructures([
    *   {"current":true,"http":"http://127.0.0.1:9500",
    *    "shardID":0,"ws":"ws://127.0.0.1:9800"},
    *   {"current":false,"http":"http://127.0.0.1:9501",

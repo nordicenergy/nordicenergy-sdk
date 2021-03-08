@@ -18,18 +18,18 @@ describe('e2e test blockchain', () => {
     const versionNumber = parseInt(netVersion.result as string, 10);
     expect(netVersion.result).toEqual(`${versionNumber}`);
   });
-  it('should test hmy_protocolVersion', async () => {
+  it('should test Ngy_protocolVersion', async () => {
     const protocolVersion = await bc.getProtocolVersion();
     expect(nordicenergy.utils.isHex(protocolVersion.result)).toEqual(true);
   });
 
   // block chain info
-  it('should test hmy_blockNumber', async () => {
+  it('should test Ngy_blockNumber', async () => {
     const res = await bc.getBlockNumber();
     expect(res.responseType).toEqual('raw');
     expect(nordicenergy.utils.isHex(res.result)).toEqual(true);
   });
-  it('should test hmy_getBlockByNumber', async () => {
+  it('should test Ngy_getBlockByNumber', async () => {
     const res = await bc.getBlockByNumber({ blockNumber: 'latest' });
     const size = res.result.size;
     expect(res.responseType).toEqual('raw');
@@ -44,7 +44,7 @@ describe('e2e test blockchain', () => {
     expect(checkBlockData(res3.result)).toEqual(true);
   });
 
-  it('should test hmy_getBlockByHash', async () => {
+  it('should test Ngy_getBlockByHash', async () => {
     const latestBlock = await bc.getBlockByNumber({ blockNumber: 'latest' });
     const res = await bc.getBlockByHash({ blockHash: latestBlock.result.hash });
     expect(res.responseType).toEqual('raw');
@@ -54,7 +54,7 @@ describe('e2e test blockchain', () => {
   });
 
   // account related
-  it('should test hmy_getBalance', async () => {
+  it('should test Ngy_getBalance', async () => {
     const balance = await bc.getBalance({ address: testAccount.Address });
     expect(nordicenergy.utils.isHex(balance.result)).toEqual(true);
   });

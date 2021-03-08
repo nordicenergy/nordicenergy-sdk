@@ -37,7 +37,7 @@ Below, examples show how to send delegate, undelegate, and collect rewards staki
 ```javascript
 * net.stakings.setTxParams({
 *   gasLimit: 25000,
-*   gasPrice: numberToHex(new hmy.utils.Unit('1').asGwei().toWei()),
+*   gasPrice: numberToHex(new Ngy.utils.Unit('1').asGwei().toWei()),
 *   chainId: 2
 * });
 ```
@@ -48,14 +48,14 @@ Create delegate staking transaction
 * const delegate = net.stakings.delegate({
 *   delegatorAddress: 'net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7',
 *   validatorAddress: 'net1vfqqagdzz352mtvdl69v0hw953hm993n6v26yl',
-*   amount: numberToHex(new Unit(1000).asOne().toWei())
+*   amount: numberToHex(new Unit(1000).asnet().toWei())
 * });
 * const delegateStakingTx = delegate.build();
 ```
 
 Sign and send the delegate transaction and receive confirmation
 ```javascript
-* // key corresponds to one103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
+* // key corresponds to net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
 * net.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
 
 * net.wallet.signStaking(delegateStakingTx).then(signedTxn => {
@@ -74,7 +74,7 @@ Create undelegate staking transaction
 * const undelegate = net.stakings.undelegate({
 *   delegatorAddress: 'net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7',
 *   validatorAddress: 'net1vfqqagdzz352mtvdl69v0hw953hm993n6v26yl',
-*   amount: numberToHex(new Unit(1000).asOne().toWei())
+*   amount: numberToHex(new Unit(1000).asnet().toWei())
 * });
 * const undelegateStakingTx = undelegate.build();
 ```

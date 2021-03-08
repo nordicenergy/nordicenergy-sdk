@@ -1,27 +1,27 @@
-# @harmony-js/contract
+# @nordicenergy-js/contract
 
-This package provides a collection of apis to create, deploy, and interact with smart contracts. In Harmony, smart contracts all fully EVM compatible and the formats and terminologies match 1-to-1 with EVM smart contracts.
+This package provides a collection of apis to create, deploy, and interact with smart contracts. In Nordic Energy, smart contracts all fully EVM compatible and the formats and terminologies match 1-to-1 with EVM smart contracts.
 
 ## Installation
 
 ```
-npm install @harmony-js/contract
+npm install @nordicenergy-js/contract
 ```
 
 ## Usage
 
 Deploying a contract using `contractConstructor`
 ```javascript
-const { ContractFactory } = require('@harmony-js/contract');
-const { Wallet } = require('@harmony-js/account');
-const { Messenger, HttpProvider } = require('@harmony-js/network');
-const { ChainID, ChainType, hexToNumber } = require('@harmony-js/utils');
+const { ContractFactory } = require('@nordicenergy-js/contract');
+const { Wallet } = require('@nordicenergy-js/account');
+const { Messenger, HttpProvider } = require('@nordicenergy-js/network');
+const { ChainID, ChainType, hexToNumber } = require('@nordicenergy-js/utils');
 
 const wallet = new Wallet(
   new Messenger(
-    new HttpProvider('https://api.s0.b.hmny.io'),
-    ChainType.Harmony,
-    ChainID.HmyTestnet,
+    new HttpProvider('https://api.s0.b.nordicenergy.io'),
+    ChainType.NordicEnergy,
+    ChainID.NgyTestnet,
   ),
 );
 const factory = new ContractFactory(wallet);
@@ -47,31 +47,31 @@ Instead of `contract.methods.contractConstructor`, `contract.deploy` could be us
 
 Loading a contract object using the contract json and contract address for interacting with it
 ```javascript
-const { Harmony } = require("@harmony-js/core");
-const { ChainID, ChainType } = require("@harmony-js/utils");
-const hmy = new Harmony("https://api.s0.b.hmny.io", {
-  chainType: ChainType.Harmony,
-  chainId: ChainID.HmyTestnet,
+const { Nordic Energy } = require("@nordicenergy-js/core");
+const { ChainID, ChainType } = require("@nordicenergy-js/utils");
+const Ngy = new Nordic Energy("https://api.s0.b.nordicenergy.io", {
+  chainType: ChainType.NordicEnergy,
+  chainId: ChainID.NgyTestnet,
 });
 
 const contractJson = require("./Counter.json");
 const contractAddr = "0x19f64050e6b2d376e52AC426E366c49EEb0724B1";
 
-const contract = hmy.contracts.createContract(contractJson.abi, contractAddr);
+const contract = Ngy.contracts.createContract(contractJson.abi, contractAddr);
 console.log(contract.methods);
 ```
 
 Directly loading contract using `ContractFactory`
 ```javascript
-const { ContractFactory } = require('@harmony-js/contract');
-const { Wallet } = require('@harmony-js/account');
-const { Messenger, HttpProvider } = require('@harmony-js/network');
-const { ChainID, ChainType, hexToNumber } = require('@harmony-js/utils');
+const { ContractFactory } = require('@nordicenergy-js/contract');
+const { Wallet } = require('@nordicenergy-js/account');
+const { Messenger, HttpProvider } = require('@nordicenergy-js/network');
+const { ChainID, ChainType, hexToNumber } = require('@nordicenergy-js/utils');
 
 const wallet = new Wallet(new Messenger(
-  new HttpProvider('https://api.s0.b.hmny.io'),
-  ChainType.Harmony,
-  ChainID.HmyTestnet,
+  new HttpProvider('https://api.s0.b.nordicenergy.io'),
+  ChainType.NordicEnergy,
+  ChainID.NgyTestnet,
 ));
 const factory = new ContractFactory(wallet);
 const contract = factory.createContract(contractJson.abi, contractAddr);
@@ -86,7 +86,7 @@ contract.methods.getCount().estimateGas(options1).then(gas => {
 });
 ```
 
-Call contract read-only methods. Harmony uses 1 Gwei gas price and gas limit of 21000 by default. Use the estimate gas api to correctly set the gas limit.
+Call contract read-only methods. Nordic Energy uses 1 Gwei gas price and gas limit of 21000 by default. Use the estimate gas api to correctly set the gas limit.
 ```javascript
 const options1 = { gasPrice: '0x3B9ACA00' }; // gas price in hex corresponds to 1 Gwei or 1000000000
 let options2 = { gasPrice: 1000000000, gasLimit: 21000 }; // setting the default gas limit, but changing later based on estimate gas
@@ -118,17 +118,17 @@ All the above apis can also be asynchronously executed using `async` and `await`
 
 Subscribing to the contract events requires web socket based messenger.
 ```javascript
-const { ContractFactory } = require('@harmony-js/contract');
-const { Wallet } = require('@harmony-js/account');
-const { Messenger, WSProvider } = require('@harmony-js/network');
-const { ChainID, ChainType, hexToNumber } = require('@harmony-js/utils');
-const ws = new WSProvider('wss://ws.s0.b.hmny.io');
+const { ContractFactory } = require('@nordicenergy-js/contract');
+const { Wallet } = require('@nordicenergy-js/account');
+const { Messenger, WSProvider } = require('@nordicenergy-js/network');
+const { ChainID, ChainType, hexToNumber } = require('@nordicenergy-js/utils');
+const ws = new WSProvider('wss://ws.s0.b.nordicenergy.io');
 
 const wallet = new Wallet(
   new Messenger(
     ws,
-    ChainType.Harmony,
-    ChainID.HmyTestnet,
+    ChainType.NordicEnergy,
+    ChainID.NgyTestnet,
   ),
 );
 const factory = new ContractFactory(wallet);

@@ -1,11 +1,11 @@
 /**
  * @packageDocumentation
- * @module harmony-contract
+ * @module nordicenergy-contract
  * @hidden
  */
 
-import { isObject, isArray } from '@harmony-js/utils';
-import { BN } from '@harmony-js/crypto';
+import { isObject, isArray } from '@nordicenergy-js/utils';
+import { BN } from '@nordicenergy-js/crypto';
 
 export const jsonInterfaceMethodToString = (json: any): string => {
   if (isObject(json) && json.name && json.name.includes('(')) {
@@ -20,16 +20,16 @@ export const flattenTypes = (includeTuple: any, puts: any[]) => {
   const types: any[] = [];
 
   puts.forEach((param: any) => {
-    if (typeof param.components === 'object') {
+    if (typeof param.compnetnts === 'object') {
       if (param.type.substring(0, 5) !== 'tuple') {
-        throw new Error('components found but type is not tuple; report on GitHub');
+        throw new Error('compnetnts found but type is not tuple; report on GitHub');
       }
       let suffix = '';
       const arrayBracket = param.type.indexOf('[');
       if (arrayBracket >= 0) {
         suffix = param.type.substring(arrayBracket);
       }
-      const result = flattenTypes(includeTuple, param.components);
+      const result = flattenTypes(includeTuple, param.compnetnts);
       // console.log("result should have things: " + result)
       if (isArray(result) && includeTuple) {
         // console.log("include tuple word, and its an array. joining...: " + result.types)

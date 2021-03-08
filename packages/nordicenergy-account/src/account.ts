@@ -135,7 +135,7 @@ class Account {
   /**
    * Generate an account object
    *
-   * @param key import an existing privateKey, or create a random one
+   * @param key import an existing privateKey, or create a random net
    * @param messenger you can setMessage later, or set message on `new`
    *
    * @example
@@ -165,7 +165,7 @@ class Account {
    * // NOTED: Key with or without `0x` are accepted, makes no different
    * // NOTED: DO NOT import `mnemonic phrase` using `Account` class, use `Wallet` instead
    * const myPrivateKey = '0xe19d05c5452598e24caad4a0d85a49146f7be089515c905ae6a19e8a578a6930'
-   * const myAccountWithMyPrivateKey = new Account(myPrivateKey)
+   * const myAccountWitNgyPrivateKey = new Account(myPrivateKey)
    * ```
    */
   constructor(key?: string, messenger: Messenger = defaultMessenger) {

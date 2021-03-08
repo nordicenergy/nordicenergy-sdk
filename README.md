@@ -22,11 +22,11 @@ The SDK includes following packages with package-level documentation and example
 
 * [A Token Faucet Demo DApp](https://github.com/nordicenergy/token-faucet-demo-dapp)
 * [Hackathon DApps](https://docs.nordicenergy.io/home/showcases/applications): DApps built during our internal hackathon
-  * [soccerplayers](https://github.com/gupadhyaya/soccerplayers), [onemoji](https://github.com/peekpi/onemoji), [harmonauts](https://github.com/ivorytowerdds/harmonauts), [good-one](https://github.com/nordicenergy/dapp-demo-crowdfunding)
+  * [soccerplayers](https://github.com/gupadhyaya/soccerplayers), [netmoji](https://github.com/peekpi/netmoji), [harmonauts](https://github.com/ivorytowerdds/harmonauts), [good-net](https://github.com/nordicenergy/dapp-demo-crowdfunding)
 * [Cross-chain Apps](https://docs.nordicenergy.io/home/showcases/crosschain) [the link contains code, demo, and more information]
 * [DeFi Apps](https://docs.nordicenergy.io/home/showcases/defi)
 * [DevPost Hackathon Apps](https://docs.nordicenergy.io/home/showcases/hackathons)
-* Eth<>Nordic Energy Bridge Components: [frontend](https://github.com/nordicenergy/ethnet-bridge.frontend), [backend](https://github.com/nordicenergy/ethnet-bridge.appengine), [smart contracts](https://github.com/nordicenergy/ethnet-bridge), [test scripts](https://github.com/nordicenergy/ethnet-bridge.tests)
+* Eth<>Nordic Energy Bridge Compnetnts: [frontend](https://github.com/nordicenergy/ethnet-bridge.frontend), [backend](https://github.com/nordicenergy/ethnet-bridge.appengine), [smart contracts](https://github.com/nordicenergy/ethnet-bridge), [test scripts](https://github.com/nordicenergy/ethnet-bridge.tests)
 * Eth<>nordicenergy bridge SDKs: [main sdk](https://github.com/nordicenergy/ethnet-bridge.sdk), [bridge UI widget](https://github.com/nordicenergy/ethnet-bridge.ui-sdk)
 * Swoop Dex: [interface](https://github.com/nordicenergy/swoop-interface), [cli](https://github.com/nordicenergy/swoop-cli), [sdk](https://github.com/nordicenergy/swoop-sdk), [deployment](https://github.com/nordicenergy/swoop-deployment), [misc](https://github.com/nordicenergy/swoop-misc), [lib](https://github.com/nordicenergy/swoop-lib), [periphery](https://github.com/nordicenergy/swoop-periphery), [core](https://github.com/nordicenergy/swoop-core), [testing](https://github.com/nordicenergy/swoop-testing), [utils](https://github.com/nordicenergy/swoop-utils)
 * [Iris Bridge](https://github.com/nordicenergy/ethnet-bridge-v2): inspired from near's rainbow bridge

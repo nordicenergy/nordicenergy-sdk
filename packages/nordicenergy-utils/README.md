@@ -33,9 +33,9 @@ Converting between different units
 const { Units, Unit, numberToString, add0xToString, fromWei, toWei, numToStr} = require('@nordicenergy-js/utils');
 const { BN } = require('@nordicenergy-js/crypto');
 
-const one = new Unit('1').asOne();
-const oneToGwei = one.toGwei();
-console.log(oneToGwei);
+const net = new Unit('1').asnet();
+const netToGwei = net.toGwei();
+console.log(netToGwei);
 
 // numberToString
 const num = 123;
@@ -49,12 +49,12 @@ console.log(expected);
 
 // fromWei
 const Wei = new BN('1000000000000000000');
-const expected = fromWei(Wei, Units.one);
+const expected = fromWei(Wei, Units.net);
 console.log(expected);
 
 // toWei
-const one = new BN('1');
-const expected = toWei(one, hmy.utils.Units.one);
+const net = new BN('1');
+const expected = toWei(net, Ngy.utils.Units.net);
 const num = numToStr(expected);
 console.log(num);
 ```

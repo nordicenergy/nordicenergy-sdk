@@ -34,7 +34,7 @@ class JsonRpc {
     method: RPCMethod | string,
     params: string | undefined | any[],
   ): RPCRequestPayload<any> => {
-    // FIXME: error to be done by shared/errors
+    // FIXME: error to be dnet by shared/errors
     if (!method) {
       throw new Error('jsonrpc method should be specified!');
     }

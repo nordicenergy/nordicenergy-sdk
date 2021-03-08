@@ -8,7 +8,7 @@ import { BN, getAddress, NordicEnergyAddress } from '@nordicenergy-js/crypto';
 import { hexToNumber } from '@nordicenergy-js/utils';
 import { Messenger, RPCMethod, Emitter, HttpProvider, NewHeaders } from '@nordicenergy-js/network';
 import { TxStatus, TransasctionReceipt } from './types';
-import { sleep, TransactionEvents } from './utils';
+import { sleep, Transactinetvents } from './utils';
 import { AbstractTransaction } from './abstractTransaction';
 
 export class TransactionBase implements AbstractTransaction {
@@ -224,7 +224,7 @@ export class TransactionBase implements AbstractTransaction {
       newHeads.then((p) => {
         p.onData(async (data: any) => {
           const blockNumber =
-            this.messenger.chainPrefix === 'hmy'
+            this.messenger.chainPrefix === 'Ngy'
               ? data.params.result.Header.number
               : data.params.result.number;
           this.emitTrack({
@@ -247,7 +247,7 @@ export class TransactionBase implements AbstractTransaction {
               }
             }
           }
-        }).onError(async (error: any) => {
+        }).netrror(async (error: any) => {
           this.txStatus = TxStatus.REJECTED;
           this.emitConfirm(this.txStatus);
           this.emitError(error);
@@ -259,28 +259,28 @@ export class TransactionBase implements AbstractTransaction {
   }
 
   emitTransactionHash(transactionHash: string) {
-    this.emitter.emit(TransactionEvents.transactionHash, transactionHash);
+    this.emitter.emit(Transactinetvents.transactionHash, transactionHash);
   }
   emitReceipt(receipt: any) {
-    this.emitter.emit(TransactionEvents.receipt, receipt);
+    this.emitter.emit(Transactinetvents.receipt, receipt);
   }
   emitError(error: any) {
-    this.emitter.emit(TransactionEvents.error, error);
+    this.emitter.emit(Transactinetvents.error, error);
   }
   emitConfirm(data: any) {
-    this.emitter.emit(TransactionEvents.confirmation, data);
+    this.emitter.emit(Transactinetvents.confirmation, data);
   }
   emitTrack(data: any) {
-    this.emitter.emit(TransactionEvents.track, data);
+    this.emitter.emit(Transactinetvents.track, data);
   }
   emitCxReceipt(receipt: any) {
-    this.emitter.emit(TransactionEvents.cxReceipt, receipt);
+    this.emitter.emit(Transactinetvents.cxReceipt, receipt);
   }
   emitCxConfirm(data: any) {
-    this.emitter.emit(TransactionEvents.cxConfirmation, data);
+    this.emitter.emit(Transactinetvents.cxConfirmation, data);
   }
   emitCxTrack(data: any) {
-    this.emitter.emit(TransactionEvents.cxTrack, data);
+    this.emitter.emit(Transactinetvents.cxTrack, data);
   }
 
   async getBlockNumber(shardID: number | string): Promise<BN> {
@@ -418,7 +418,7 @@ export class TransactionBase implements AbstractTransaction {
       newHeads.then((p) => {
         p.onData(async (data: any) => {
           const blockNumber =
-            this.messenger.chainPrefix === 'hmy'
+            this.messenger.chainPrefix === 'Ngy'
               ? data.params.result.Header.number
               : data.params.result.number;
           this.emitCxTrack({
@@ -441,7 +441,7 @@ export class TransactionBase implements AbstractTransaction {
               }
             }
           }
-        }).onError(async (error: any) => {
+        }).netrror(async (error: any) => {
           this.cxStatus = TxStatus.REJECTED;
           this.emitCxConfirm(this.cxStatus);
           this.emitError(error);

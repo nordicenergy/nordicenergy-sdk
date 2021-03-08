@@ -15,7 +15,7 @@
     "publishConfig": {
         "access": "public"
     },
-    "author": "neeboo@firestack.one",
+    "author": "Nordic Energy ",
     "license": "MIT",
     "dependencies": {
         "@nordicenergy-js/crypto": "0.1.56",

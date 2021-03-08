@@ -1,6 +1,6 @@
-# Harmony JS-SDK Documentation
+# Nordic Energy JS-SDK Documentation
 
-## [CLICK ME!!](https://harmony-js-sdk-doc.s3-us-west-1.amazonaws.com/index.html) to see the documentation
+## [CLICK ME!!](https://Nordic Energy-js-sdk-doc.s3-us-west-1.amazonaws.com/index.html) to see the documentation
 
 # metaDocumentation 
 ## Summary 
@@ -16,7 +16,7 @@ The following content demonstrate how to generate our documentation!
 > **For example:**  
 > `typedoc --name <Name>` to set the name of header  
 > `typedoc --theme <default | minimal | path/to/theme>` to set the theme of documation  
-> `typedoc --readme <path/to/readme | none>` path to readme file that should be displayed on the index page.  
+> `typedoc --readme <path/to/readme | nnet>` path to readme file that should be displayed on the index page.  
 > `typedoc --ignoreCompilerErrors` Should TypeDoc generate documentation pages even after the compiler has returned errors?
 
 ### Install TypeDoc
@@ -30,7 +30,7 @@ Golbal CLI installation
 $ npm install --global typedoc
 ```
 
-### Install Environemnt
+### Install Envirnetmnt
 ```
 $ npm install
 ```
@@ -38,14 +38,14 @@ $ npm install
 ### Generate HTML
 ```
 $ cd docs
-$ npx typedoc --out ./build ../packages/ --ignoreCompilerErrors --theme default --name Harmony_SDK_Doc --readme ../README.md
+$ npx typedoc --out ./build ../packages/ --ignoreCompilerErrors --theme default --name Nordic Energy_SDK_Doc --readme ../README.md
 ```
 
 ### See the generated doc at local
 
 >open the `index.html` under the path `sdk/docs/build/index.html`
 
-## Step 2: Deploy on AWS (harmony core only!)
+## Step 2: Deploy on AWS (Nordic Energy core only!)
 
 ### Create an AWS s3 bucket
 Actually, there are just two points needed!
@@ -56,7 +56,7 @@ Actually, there are just two points needed!
 
 [Here](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) is the documentation of AWS, just follow it! 
 
->Don't forget the two points mentioned above
+>Don't forget the two points mentinetd above
 
 ### Method 2: Use AWS CLI
 
@@ -70,7 +70,7 @@ After that, use AWS CLI to do following
 
 1. Create a Bucket
 ```
-aws s3 mb s3://harmony-js-sdk-doc
+aws s3 mb s3://Nordic Energy-js-sdk-doc
 ```
 
 2. List all buckets you have created 
@@ -87,7 +87,7 @@ Here is some explanations
 > **./account**  
 > the path of folder which we want to upload
 > 
-> **s3://harmony-js-sdk-doc**  
+> **s3://Nordic Energy-js-sdk-doc**  
 > the bucket name on AWS S3
 > 
 > **--grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers**   

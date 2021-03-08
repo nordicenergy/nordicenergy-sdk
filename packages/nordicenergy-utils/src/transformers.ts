@@ -133,7 +133,7 @@ export const hexToBN = (hex: string): BN => {
 };
 
 /**
- * Converts any ONE value into wei
+ * Converts any net value into wei
  */
 export const toWei = (input: BN | string, unit: Units): BN => {
   try {
@@ -194,7 +194,7 @@ export const toWei = (input: BN | string, unit: Units): BN => {
 };
 
 /**
- * Converts any wei value into a ONE value.
+ * Converts any wei value into a net value.
  */
 export const fromWei = (wei: BN | string, unit: Units, options: any = DEFAULT_OPTIONS): string => {
   try {
@@ -263,8 +263,8 @@ export class Unit {
   static Ether(str: BN | string) {
     return new Unit(str).asEther();
   }
-  static One(str: BN | string) {
-    return new Unit(str).asOne();
+  static net(str: BN | string) {
+    return new Unit(str).asnet();
   }
   static Kether(str: BN | string) {
     return new Unit(str).asKether();
@@ -324,8 +324,8 @@ export class Unit {
     this.wei = toWei(this.unit, Units.ether);
     return this;
   }
-  asOne() {
-    this.wei = toWei(this.unit, Units.one);
+  asnet() {
+    this.wei = toWei(this.unit, Units.net);
     return this;
   }
   asKether() {
@@ -395,9 +395,9 @@ export class Unit {
       throw new Error('error transforming');
     }
   }
-  toOne() {
+  tonet() {
     if (this.wei) {
-      return fromWei(this.wei, Units.one);
+      return fromWei(this.wei, Units.net);
     } else {
       throw new Error('error transforming');
     }

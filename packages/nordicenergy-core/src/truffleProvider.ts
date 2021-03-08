@@ -156,7 +156,7 @@ export class TruffleProvider extends HDNode {
           jsonrpc: '2.0',
         };
       }
-      case 'hmy_getBlockByNumber': {
+      case 'Ngy_getBlockByNumber': {
         const result = await this.provider.send(newArgs, (err: any, res: any) => {
           try {
             if (err) {
@@ -191,7 +191,7 @@ export class TruffleProvider extends HDNode {
       }
 
       default: {
-        // hmy_getBlockByNumber
+        // Ngy_getBlockByNumber
 
         const result = await this.provider.send(
           newArgs,

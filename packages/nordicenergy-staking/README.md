@@ -24,11 +24,11 @@ const {
   Unit,
 } = require('@nordicenergy-js/utils');
 
-const hmy = new NordicEnergy(
+const Ngy = new NordicEnergy(
     'https://api.s0.b.nordicenergy.io/',
     {
         chainType: ChainType.NordicEnergy,
-        chainId: ChainID.HmyTestnet,
+        chainId: ChainID.NgyTestnet,
     },
 );
 ```
@@ -36,7 +36,7 @@ Below, examples show how to send delegate, undelegate, and collect rewards staki
 ```javascript
 net.stakings.setTxParams({
   gasLimit: 25000,
-  gasPrice: numberToHex(new hmy.utils.Unit('1').asGwei().toWei()),
+  gasPrice: numberToHex(new Ngy.utils.Unit('1').asGwei().toWei()),
   chainId: 2
 });
 ```
@@ -55,9 +55,9 @@ const delegateStakingTx = delegate.build();
 Sign and send the delegate transaction and receive confirmation
 ```javascript
 // key corresponds to net103q7qe5t2505lypvltkqtddaef5tzfxwsse4z7, only has testnet balance
-hmy.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
+Ngy.wallet.addByPrivateKey('45e497bd45a9049bcb649016594489ac67b9f052a6cdf5cb74ee2427a60bf25e');
 
-hmy.wallet.signStaking(delegateStakingTx).then(signedTxn => {
+Ngy.wallet.signStaking(delegateStakingTx).then(signedTxn => {
   signedTxn.sendTransaction().then(([tx, hash]) => {
     console.log(hash);
     signedTxn.confirm(hash).then(response => {

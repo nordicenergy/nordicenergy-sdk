@@ -179,7 +179,7 @@ export class NordicEnergyAddress {
  * const { ChainID, ChainType } = require('@nordicenergy-js/utils');
  * const { randomBytes } = require('@nordicenergy-js/crypto')
  *
- * const hmy = new NordicEnergy(
+ * const Ngy = new NordicEnergy(
  *   'http://localhost:9500',
  *   {
  *   chainType: ChainType.NordicEnergy,

@@ -23,7 +23,7 @@ import { NordicEnergyConfig } from './util';
 /** @hidden */
 export enum ExtensionType {
   MathWallet = 'MathWallet',
-  OneWallet = 'NetWallet',
+  netWallet = 'NetWallet',
 }
 
 /** @hidden */
@@ -51,7 +51,7 @@ export interface ExtensionInterface {
   messenger?: Messenger;
   version: string;
   isMathWallet?: boolean;
-  isOneWallet?: boolean;
+  isnetWallet?: boolean;
   network: ExtensionNetwork;
 }
 
@@ -80,7 +80,7 @@ export class NordicEnergyExtension {
   /**
    * Create an blockchain instance support wallet injection
    *
-   * @param wallet could be MathWallet or OneWallet instance
+   * @param wallet could be MathWallet or netWallet instance
    * @param config (optional), using default `Chain_Id` and `Chain_Type`
    *
    * @example
@@ -89,9 +89,9 @@ export class NordicEnergyExtension {
    * export const initEx = async() => {
    *   netEx = new NordicEnergyExtension(window.nordicenergy);
    * }
-   * // Using OneWallet instance
+   * // Using netWallet instance
    * export const initEx = async() => {
-   *   netEx = new NordicEnergyExtension(window.onewallet);
+   *   netEx = new NordicEnergyExtension(window.netwallet);
    * }
    * ```
    */
@@ -104,7 +104,7 @@ export class NordicEnergyExtension {
   ) {
     this.extensionType = null;
     this.wallet = wallet;
-    // check if it is mathwallet or onewallet
+    // check if it is mathwallet or netwallet
     this.isExtension(this.wallet);
 
     if (wallet.messenger) {
@@ -155,12 +155,12 @@ export class NordicEnergyExtension {
   public isExtension(wallet: ExtensionInterface) {
     let isExtension = false;
     this.extensionType = null;
-    if (wallet.isMathWallet || wallet.isOneWallet) {
+    if (wallet.isMathWallet || wallet.isnetWallet) {
       isExtension = true;
       if (wallet.isMathWallet) this.extensionType = ExtensionType.MathWallet;
-      else this.extensionType = ExtensionType.OneWallet;
+      else this.extensionType = ExtensionType.netWallet;
 
-      // remake signTransaction of MathWallet or OneWallet
+      // remake signTransaction of MathWallet or netWallet
       const { signTransaction } = this.wallet;
       this.wallet.signTransaction = async (
         transaction: Transaction,
