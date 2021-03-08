@@ -1,39 +1,39 @@
-# Harmony JavaScript SDK
+# Nordic Energy JavaScript SDK
 
-[![npm version](https://img.shields.io/npm/v/@harmony-js/core.svg?style=flat-square)](https://www.npmjs.com/package/@harmony-js/core)
-[![Build Status](https://travis-ci.com/FireStack-Lab/Harmony-sdk-core.svg?branch=master)](https://travis-ci.com/FireStack-Lab/Harmony-sdk-core)
+[![npm version](https://img.shields.io/npm/v/@nordicenergy-js/core.svg?style=flat-square)](https://www.npmjs.com/package/@nordicenergy-js/core)
+[![Build Status](https://travis-ci.com/FireStack-Lab/Nordic-Energy-sdk-core.svg?branch=master)](https://travis-ci.com/FireStack-Lab/Nordic-Energy-sdk-core)
 
-This is the Harmony Javascript SDK which provides an easier way to interact with Harmony blockchain.
+This is the Nordic Energy Javascript SDK which provides an easier way to interact with NordicEnergy blockchain.
 
-Please read the [documentation](https://jssdk.doc.hmny.io/) for full API doc.
+Please read the [documentation](https://jssdk.doc.nordicenergy.io/) for full API doc.
 
 The SDK includes following packages with package-level documentation and examples inside each package.
 
-1. [@harmony-js/core](https://github.com/harmony-one/sdk/tree/master/packages/harmony-core)
-2. [@harmony-js/account](https://github.com/harmony-one/sdk/tree/master/packages/harmony-account)
-3. [@harmony-js/crypto](https://github.com/harmony-one/sdk/tree/master/packages/harmony-crypto)
-4. [@harmony-js/network](https://github.com/harmony-one/sdk/tree/master/packages/harmony-network)
-5. [@harmony-js/utils](https://github.com/harmony-one/sdk/tree/master/packages/harmony-utils)
-6. [@harmony-js/transaction](https://github.com/harmony-one/sdk/tree/master/packages/harmony-transaction)
-7. [@harmony-js/contract](https://github.com/harmony-one/sdk/tree/master/packages/harmony-contract)
-8. [@harmony-js/staking](https://github.com/harmony-one/sdk/tree/master/packages/harmony-staking)
+1. [@nordicenergy-js/core](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-core)
+2. [@nordicenergy-js/account](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-account)
+3. [@nordicenergy-js/crypto](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-crypto)
+4. [@nordicenergy-js/network](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-network)
+5. [@nordicenergy-js/utils](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-utils)
+6. [@nordicenergy-js/transaction](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-transaction)
+7. [@nordicenergy-js/contract](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-contract)
+8. [@nordicenergy-js/staking](https://github.com/nordicenergy/sdk/tree/master/packages/nordicenergy-staking)
 
 # Examples
 
-* [A Token Faucet Demo DApp](https://github.com/harmony-one/token-faucet-demo-dapp)
-* [Hackathon DApps](https://docs.harmony.one/home/showcases/applications): DApps built during our internal hackathon
-  * [soccerplayers](https://github.com/gupadhyaya/soccerplayers), [onemoji](https://github.com/peekpi/onemoji), [harmonauts](https://github.com/ivorytowerdds/harmonauts), [good-one](https://github.com/harmony-one/dapp-demo-crowdfunding)
-* [Cross-chain Apps](https://docs.harmony.one/home/showcases/crosschain) [the link contains code, demo, and more information]
-* [DeFi Apps](https://docs.harmony.one/home/showcases/defi)
-* [DevPost Hackathon Apps](https://docs.harmony.one/home/showcases/hackathons)
-* Eth<>Harmony Bridge Components: [frontend](https://github.com/harmony-one/ethhmy-bridge.frontend), [backend](https://github.com/harmony-one/ethhmy-bridge.appengine), [smart contracts](https://github.com/harmony-one/ethhmy-bridge), [test scripts](https://github.com/harmony-one/ethhmy-bridge.tests)
-* Eth<>Harmony bridge SDKs: [main sdk](https://github.com/harmony-one/ethhmy-bridge.sdk), [bridge UI widget](https://github.com/harmony-one/ethhmy-bridge.ui-sdk)
-* Swoop Dex: [interface](https://github.com/harmony-one/swoop-interface), [cli](https://github.com/harmony-one/swoop-cli), [sdk](https://github.com/harmony-one/swoop-sdk), [deployment](https://github.com/harmony-one/swoop-deployment), [misc](https://github.com/harmony-one/swoop-misc), [lib](https://github.com/harmony-one/swoop-lib), [periphery](https://github.com/harmony-one/swoop-periphery), [core](https://github.com/harmony-one/swoop-core), [testing](https://github.com/harmony-one/swoop-testing), [utils](https://github.com/harmony-one/swoop-utils)
-* [Iris Bridge](https://github.com/harmony-one/ethhmy-bridge-v2): inspired from near's rainbow bridge
-* [Animoca's BeastQuest Game](https://github.com/harmony-one/BeastQuest)
-* [Chainlink Testnet Integration Demo](https://github.com/harmony-one/chainlink-demo-project)
-* [NFT Store DApp](https://github.com/harmony-one/nft-store)
-* [old dapp-examples](https://github.com/harmony-one/dapp-examples): some of them may be outdated!
+* [A Token Faucet Demo DApp](https://github.com/nordicenergy/token-faucet-demo-dapp)
+* [Hackathon DApps](https://docs.nordicenergy/home/showcases/applications): DApps built during our internal hackathon
+* [soccerplayers](https://github.com/gupadhyaya/soccerplayers), [Netmoji](https://github.com/peekpi/Netmoji), [harmonauts](https://github.com/ivorytowerdds/harmonauts), [good-Net](https://github.com/nordicenergy/dapp-demo-crowdfunding)
+* [Cross-chain Apps](https://docs.nordicenergy/home/showcases/crosschain) [the link contains code, demo, and more information]
+* [DeFi Apps](https://docs.nordicenergy/home/showcases/defi)
+* [DevPost Hackathon Apps](https://docs.nordicenergy/home/showcases/hackathons)
+* Eth<>Nordci Energy Bridge CompNetnts: [frontend](https://github.com/nordicenergy/ethNgy-bridge.frontend), [backend](https://github.com/nordicenergy/ethNgy-bridge.appengine), [smart contracts](https://github.com/nordicenergy/ethNgy-bridge), [test scripts](https://github.com/nordicenergy/ethNgy-bridge.tests)
+* Eth<>NordicEnergy bridge SDKs: [main sdk](https://github.com/nordicenergy/ethNgy-bridge.sdk), [bridge UI widget](https://github.com/nordicenergy/ethNgy-bridge.ui-sdk)
+* Swoop Dex: [interface](https://github.com/nordicenergy/swoop-interface), [cli](https://github.com/nordicenergy/swoop-cli), [sdk](https://github.com/nordicenergy/swoop-sdk), [deployment](https://github.com/nordicenergy/swoop-deployment), [misc](https://github.com/nordicenergy/swoop-misc), [lib](https://github.com/nordicenergy/swoop-lib), [periphery](https://github.com/nordicenergy/swoop-periphery), [core](https://github.com/nordicenergy/swoop-core), [testing](https://github.com/nordicenergy/swoop-testing), [utils](https://github.com/nordicenergy/swoop-utils)
+* [Iris Bridge](https://github.com/nordicenergy/ethNgy-bridge-v2): inspired from near's rainbow bridge
+* [Animoca's BeastQuest Game](https://github.com/nordicenergy/BeastQuest)
+* [Chainlink Testnet Integration Demo](https://github.com/nordicenergy/chainlink-demo-project)
+* [NFT Store DApp](https://github.com/nordicenergy/nft-store)
+* [old dapp-examples](https://github.com/nordicenergy/dapp-examples): some of them may be outdated!
 
 
 # Installation
@@ -52,10 +52,10 @@ This library works on both nodejs and browser. Please use it according to your u
 ```bash
 
 # npm
-npm install @harmony-js/core@next 
+npm install @nordicenergy-js/core@next 
 
 # yarn
-yarn add @harmony-js/core@next
+yarn add @nordicenergy-js/core@next
 
 # tslib is required, we'd better install it as well
 npm install tslib
@@ -95,7 +95,7 @@ yarn test:src
 
 1. `.env` file defines configuration, edit if you have custom settings
    
-2. Run harmony node locally, follow the instructions: https://github.com/harmony-one/harmony
+2. Run  Nordic Energy node locally, follow the instructions: https://github.com/nordicenergy/sdk
    
 3. Wait for 1-2 mins, and run this:
 
@@ -106,3 +106,4 @@ yarn build && yarn test:e2e
 
 
 
+# nordicenergy-sdk
