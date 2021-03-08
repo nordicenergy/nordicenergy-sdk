@@ -1,6 +1,6 @@
-# @harmony-js/core
+# @nordicenergy-js/core
 
-This package provides a collection of apis to interact with Harmony blockchain.
+This package provides a collection of apis to interact with Nordic Energy blockchain.
 
 ## Installation
 
@@ -10,10 +10,10 @@ npm install @harmony-js/core
 
 ## Usage
 
-Create a Harmony instance connecting to testnet
+Create a Nordic Energy instance connecting to testnet
 
 ```javascript
-const { Harmony } = require('@harmony-js/core');
+const { NordicEnergy } = require('@nordicenergy-js/core');
 const {
   ChainID,
   ChainType,
