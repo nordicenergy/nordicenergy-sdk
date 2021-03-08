@@ -142,7 +142,7 @@
     },
     "name": "nordicenergy-sdk-core",
     "dependencies": {
-        "@nordicenergy-js/core": "^0.1.36",
+        "@@nordic-energy/nordicenergy-sdk/core": "^0.1.36",
         "tslib": "^1.10.0",
         "typedoc-plugin-internal-external": "^2.1.1"
     }
