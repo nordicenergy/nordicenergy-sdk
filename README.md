@@ -50,10 +50,10 @@ This library works on both nodejs and browser. Please use it according to your u
 ```bash
 
 # npm
-npm install @@nordic-energy/nordicenergy-sdk/core@next 
+npm install @nordic-energy/nordicenergy-sdk/core@next 
 
 # yarn
-yarn add @@nordic-energy/nordicenergy-sdk/core@next
+yarn add @nordic-energy/nordicenergy-sdk/core@next
 
 # tslib is required, we'd better install it as well
 npm install tslib
